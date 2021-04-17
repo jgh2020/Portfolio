@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style3.css?v8" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"">
+    <title>4 popsongs</title>
+</head>
+<body>
+        
+        <div class="header1">
+            <a style="float:left; text-decoration:none; font-family: Arial; color:goldenrod;" href="mailto:jamesgold.ksk@gmail.com">jamesgold.ksk@gmail.com</a>
+            <a href="https://www.facebook.com/" target="_blank" ><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
+            <a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
+        </div>
+
+        <div class="header2">
+            <div class="logo">4 <i style = "color:darkred; font-size:2vw;" class="fas fa-music"></i> PopSongs</div>
+            <a href="coldplay.html">Coldplay</a>
+            <a href="weeknd.html">The Weeknd</a>
+            <a href="bts.html">BTS</a>
+            <a href="alan.html">The Alan Parsons Project</a>
+            <a style="float:right;" href="index.php"><i class="fab fa-product-hunt"> Portfolio List</i></a>
+        </div>
+
+        <div class="container"></div>
+        <div class="filterdown"></div>
+        <div class="filterup"></div>
+        <div class="drawbox">
+            <div class="title one" id="31" style="color:aqua;" onclick="movedown(21)">Viva la Vida</div>
+            <div class="lyric one" id="21">I used to rule the world Seas would rise when I gave the word Now in the morning, I sleep alone Sweep the streets I used to own I used to roll the dice Feel the fear in my enemy's eyes Listen as the crowd would sing Now the old king is dead, long live the king One minute I held the key Next the walls were closed on me And I discovered that my castles stand Upon pillars of salt and pillars of sand I hear Jerusalem bells are ringing Roman Cavalry choirs are singing Be my mirror, my sword and shield My missionaries in a foreign field For some reason I can't explain Once you go there was never, never an honest word And that was when I ruled the world It was a wicked and wild wind Blew down the doors to let me in Shattered windows and the sound of drums People.</div>
+            <div class="title two" id="32" onclick="movedown(22)">Blinding Lights</div>
+            <div class="lyric two" id="22">Yeah I've been tryin' to call I've been on my own for long enough Maybe you can show me how to love, maybe I'm going through withdrawals You don't even have to do too much You can turn me on with just a touch, baby I look around and Sin City's cold and empty (oh) No one's around to judge me (oh) I can't see clearly when you're gone And I said, ooh, I'm blinded by the lights No, I can't sleep until I feel your touch I said, ooh, I'm drowning in the night Oh, when I'm like this, you're the one I trust (Hey, hey, hey) I'm running out of time 'Cause I can see the sun light up the sky So I hit the road in overdrive, baby, oh The city's cold and empty (oh) No one's around to judge me (oh) I can't see clearly when you're gone And I said, ooh, I'm blinded by the lights.</div>
+            <div class="title three" id="33" onclick="movedown(23)">Dynamite</div>
+            <div class="lyric three" id="23">Cause I-I-I'm in the stars tonight So watch me bring the fire and set the night alight Shoes on, get up in the morn' Cup of milk, let's rock and roll King Kong, kick the drum, rolling on like a Rolling Stone Sing song when I'm walking home Jump up to the top, LeBron Ding dong, call me on my phone Ice tea and a game of ping pong, huh This is getting heavy Can you hear the bass boom? I'm ready (woo hoo) Life is sweet as honey Yeah, this beat cha-ching like money, huh Disco overload, I'm into that, I'm good to go I'm diamond, you know I glow up Hey, so let's go 'Cause I-I-I'm in the stars tonight So watch me bring the fire and set the night alight (hey) Shining through the city with a little funk and soul So I'ma light it up like dynamite, whoa oh oh.</div>
+            <div class="title four" id="34" style="color:aqua;" onclick="movedown(24)">Days are Numbers</div>
+            <div class="lyric four" id="24">The traveller is always leaving town He never has the time to turn around And if the road he's taken isn't leading anywhere He seems to be completely unaware The traveller is always leaving home The only kind of life he's ever known When every moment seems to be a race against the time There's always one more mountain left to climb Days are numbers (days) Watch the stars (are numbers) We can only see so far Someday, you'll know where you are (know where you are) Remember, days are numbers (days) Count the stars (are numbers) We can only go so far One day, you'll know where you are (know where you are) The traveller awaits the morning tide He doesn't know what's on the other side But something deep inside of him keeps telling him to go He hasn't found a reason.</div>
+        </div>
+       
+        <div class="main">
+            <img class="img01" src="goldbg.jpg">
+            <div class="frame">
+
+                <div class="line">
+                    
+					<div class="pic slide01">
+						<img src="days.jpg">
+					</div>
+					<div class="pic slide02">
+						<a href="coldplay.html"><img src="coldplay.jpg"></a>
+					</div>
+					<div class="pic slide03">
+						<a href="weeknd.html"><img src="weeknd.png"></a>
+					</div>
+					<div class="pic slide04">
+						<a href="bts.html"><img src="bts.png"></a>
+					</div>
+					<div class="pic slide05">
+						<a href="alan.html"><img src="days.jpg"></a>
+					</div>
+					<div class="pic slide06">
+						<img src="coldplay.jpg">
+					</div>
+
+				</div>
+            </div>
+            <button class="back">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next" onclick="gonext()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="singername">Coldplay</div>
+
+        <div class="main radio">
+            <input class="rbutton" type="radio" name="slide" onchange="moveto(1)" id="1" checked>
+            <input type="radio" name="slide" onchange="moveto(2)" id="2">
+            <input type="radio" name="slide" onchange="moveto(3)" id="3">
+            <input type="radio" name="slide" onchange="moveto(4)" id="4">
+        </div>
+      
+        <!-- <div class="border"></div> -->
+
+        <div class="members">
+            
+            <div class="eachmem 1">
+                <a href="coldplay.html"><img class="circle 1" src="cold2.jpg"></a>
+                <div class="bluename">Coldplay</div>
+                <div class="splyric"><span style="font-size: 1.3vw; font-weight: bold; color:silver">Viva la Vida </span>I used to rule the world Seas would rise when I gave the word Now in the morning, I sleep alone Sweep the streets I used to own I used to roll the dice Feel the fear in my enemy's eyes Listen as the crowd would sing Now the old king is dead, long live the king One minute I held the key Next the walls were closed on me And I discovered that my castles stand Upon pillars of salt and pillars of sand.</div>
+            </div>
+            <div class="eachmem 2">
+                <a href="weeknd.html"><img class="circle 2" src="weekend2.jpg"></a>
+                <div class="bluename">The Weeknd</div>
+                <div class="splyric"><span style="font-size: 1.3vw; font-weight: bold; color:silver">Blinding Lights </span>Yeah I've been tryin' to call I've been on my own for long enough Maybe you can show me how to love, maybe I'm going through withdrawals You don't even have to do too much You can turn me on with just a touch, baby I look around and Sin City's cold and empty (oh) No one's around to judge me (oh) I can't see clearly when you're gone And I said, ooh, I'm blinded by the lights.</div>
+            </div>
+            <div class="eachmem 3">
+                <a href="bts.html"><img class="circle 3" src="bts2.jpg"></a>
+                <div class="bluename">BTS</div>
+                <div class="splyric"><span style="font-size: 1.3vw; font-weight: bold; color:silver">Dynamite </span>Cause I-I-I'm in the stars tonight So watch me bring the fire and set the night alight Shoes on, get up in the morn' Cup of milk, let's rock and roll King Kong, kick the drum, rolling on like a Rolling Stone Sing song when I'm walking home Jump up to the top, LeBron Ding dong, call me on my phone Ice tea and a game of ping pong, huh This is getting heavy Can you hear the bass boom? I'm ready (woo hoo).</div>
+            </div>
+            <div class="eachmem 4">
+                <a href="alan.html"><img class="circle 4" src="alan2.jpg"></a>
+                <div class="bluename">The Alan Parsons Project</div>
+                <div class="splyric"><span style="font-size: 1.3vw; font-weight: bold; color:silver">Days Are Numbers </span>The traveller is always leaving town He never has the time to turn around And if the road he's taken isn't leading anywhere He seems to be completely unaware The traveller is always leaving home The only kind of life he's ever known When every moment seems to be a race against the time There's always one more mountain left to climb Days are numbers (days) Watch the stars.</div>
+            </div>
+        </div>
+            <div class="upfooter">
+                <a href="https://www.facebook.com/" target="_blank" ><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
+                <a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>    
+            </div>
+
+            <div class="downfooter">
+
+                <div class="footercon">
+                    <a href="mailto:jamesgold.ksk@gmail.com">Contact us</i></a>
+                    <a href="https://www.quora.com/" target="_blank">Q & A</i></a>    
+                </div>
+
+                <div class="footercon">
+                    <a href="https://news.google.com/topstories?hl=en-CA&gl=CA&ceid=CA:en" target="_blank" >News</a>
+                    <a href="https://ca.linkedin.com/" target="_blank" >Linkedin</a>
+                    <a href="https://ca.indeed.com/" target="_blank" >Indeed</a>
+                </div>
+                
+                <div class="footercon">
+                    <a href="password.php">Resume</a>
+                    <a href="english.php">English Study</a>
+                    <a href="lotto.php">Lotto</a>
+                </div>
+                
+            </div>
+
+            <div><a class="top" href="#top" title="top">Top</a></div>
+
+</body>
+</html>
+
+<script type = "text/javascript">
+
+    const frame = document.querySelector('.frame'); 
+    const line = document.querySelector('.line');   
+    const pics = document.querySelectorAll('.pic'); 
+    const nextbtn = document.querySelector('.next'); 
+    const backbtn = document.querySelector('.back'); 
+    const container = document.querySelector('.container'); 
+    const singername = document.querySelector('.singername');
+    
+    
+    const piclen = pics.length; 
+    const picwidth = 15; 
+    const speed = 1000; 
+    line.style.width = picwidth * (piclen) + "vw";
+    let curIndex = 1; 
+    
+        function gonext(){
+        if (curIndex <= piclen - 2) { // 1 2 3 4
+            curIndex++;
+            line.style.transition = speed + "ms";
+            line.style.transform = "translateX("+(-1)*(picwidth * (curIndex-1)) + "vw)";
+            frame.style.transition = speed + "ms";
+            
+                if (curIndex == piclen - 1){ // 5
+                    setTimeout(function() {
+                        line.style.transition = "0ms";
+                        line.style.transform = "translateX(0)";
+                    }, speed);
+                    curIndex=1;
+                }    
+        }
+        document.getElementById(curIndex).checked = true;
+            change(curIndex);
+        }
+
+        function moveto(num){
+            curIndex = num-1;
+            gonext();
+            curIndex = num;
+        }
+
+        function change(num){
+            singername.style.transition = "1s";
+            singername.style.transform = "rotateX(360deg)";
+
+            if (num == 1){
+                singername.innerHTML  = "Coldplay";
+                container.style.backgroundImage = "url(coldplay.jpg)";
+            }else if(num == 2){
+                singername.innerHTML  = "The Weeknd";
+                container.style.backgroundImage = "url(weeknd.png)";
+            }else if(num == 3){
+                singername.innerHTML  = "BTS";
+                container.style.backgroundImage = "url(bts.png)";
+
+            }else if(num == 4){
+                singername.innerHTML  = "The Alan Parsons Project";
+                container.style.backgroundImage = "url(days.jpg)";
+            }
+            setTimeout(function(){
+                singername.style.transition = "0s";
+                singername.style.transform = "rotateX(0deg)";
+                singername.style.textShadow = "0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh gold, 0 0 9vh gold, 0 0 11vh gold";
+            }, 1000);
+
+            setTimeout(function(){
+                singername.style.textShadow = "unset";
+            }, 1400);
+        }
+    
+    backbtn.addEventListener('click', function() {
+        curIndex--;
+        if (curIndex >= 0) { // 1 2 3 4 
+            line.style.transition = speed + "ms";
+            line.style.transform = "translateX("+(-1)*(picwidth * (curIndex-1)) + "vw)";
+            
+                if (curIndex == 0){ // 0
+                    setTimeout(function() {
+                        line.style.transition = "0ms";
+                        line.style.transform = "translateX("+(-1)*(picwidth*(piclen-3)) + "vw)";
+                    }, speed);
+                    curIndex=4;
+                }
+        }
+        document.getElementById(curIndex).checked = true;
+        change(curIndex);
+    });
+
+    document.getElementById(22).style.maxHeight = "0vh";
+    document.getElementById(23).style.maxHeight = "0vh";
+    
+    function movedown(num){
+
+        var lyric = document.getElementById(num);
+        var title = document.getElementById(num+10);
+
+        if (lyric.style.maxHeight == "0vh"){
+            title.style.color = "aqua";
+            lyric.style.maxHeight = "50vh";
+        } else {
+            title.style.color = "silver";
+            lyric.style.maxHeight = "0vh";
+        }
+    }
+
+    
+
+    var onScrollHandler = function(){
+        const header2 = document.querySelectorAll('.header2 a');
+        var location = document.documentElement.scrollTop;
+            if (location < 480){
+                for(var i=0; i<header2.length; i++){
+                    header2[i].style.color = "goldenrod";
+                }
+            } else {
+                for(var j=0; j<header2.length; j++){
+                    header2[j].style.color = "navy";
+                }
+            }
+    };
+
+    document.addEventListener("scroll", onScrollHandler);
+
+    </script>
+
+
+

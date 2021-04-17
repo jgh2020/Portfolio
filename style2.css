@@ -1,0 +1,314 @@
+h1, h2, h3, h4, h5, h6,
+body, div, p, img{
+
+    padding: 0;
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1vw; 
+    display: flex;
+}
+
+aside{
+    width: 30%;
+    height:100vh;
+    position:fixed;
+    overflow: auto;
+    color:white;
+}
+
+aside img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.aside_filter{
+    position:absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:black;
+    opacity:0.4;
+    z-index: 2;
+    
+}
+
+.aside_filter.cold{
+    opacity:0.2;
+}
+
+.aside_filter.bts{
+    opacity:0.5;
+}
+
+.aside_filter.alan{
+    opacity:0.1;
+}
+
+.aside_box{
+    width:100%;
+    height: 100%;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.aside_box01{
+    margin-top: 5%;
+    padding: 15% 20%;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.aside_box02{
+    
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     
+}
+
+.face1 {
+    width:9vw;
+    height: 19vh;
+    border-radius: 50%;
+    /* border: 0.2vw solid white; */
+    border: solid white;
+    border-width: 0.4vh 0.2vw;
+    position: absolute;
+    top:33.15%;
+    left:35%;
+    z-index: 8;
+}
+
+.face1:hover {
+    opacity: 0;
+    transition: opacity 1s;
+	cursor:pointer;
+}
+
+.face2 {
+    width:9vw;
+    height: 19vh;
+    border-radius: 50%;
+    border: solid white;
+    border-width: 0.4vh 0.2vw;
+    position: absolute;
+    top:33.15%;
+    left:35%;
+    z-index: 7;
+}
+
+.facespace {
+    width:9vw;
+    height: 19vh;
+    border-radius: 50%;
+    border: solid white;
+    border-width: 0.4vh 0.2vw;
+    position: relative;
+    left:35%;
+    visibility: hidden;
+    
+}
+
+.aside_box03{
+    margin-bottom: 10%;
+    padding: 10% 25%;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clock{
+    font-size: 1vw;
+    position: absolute;
+    margin-left: -3.2%;
+    margin-top: -0.25%;
+}
+    
+.main{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_01 {
+    margin: 5% 5% 1% 35% ;
+    padding-left: 0.8%;
+    color:  rgb(51, 49, 49);
+    font-size: 2vw;
+    font-family: Times New Roman;
+}
+
+.main_02 {
+    margin-left: 35%;
+    margin-right:5%;
+    padding: 0.8%;
+    display:block;
+    color:  rgb(51, 49, 49);
+    font-size: 1vw;
+    font-weight:normal;
+    font-family: Georgia;
+    text-align: left;    
+}
+
+.main_img {
+    width:25%;
+    height:auto;
+    margin:0.5% 2% 2% 2%;
+    float: left;
+}
+
+.main_img:hover{
+    filter:brightness(0.5);
+    transition: filter 1s;
+    cursor: pointer;	
+}
+
+.main_singer{
+    color:goldenrod;
+    font-size: 1.5vw;
+    margin-top:auto;
+}
+
+.main_singer.blue{
+    color:cornflowerblue;
+}
+
+.main_singer.purple{
+    color: mediumorchid;
+}
+
+.audioplay{
+	height:4vh; 
+	width: 19vw;
+	margin:auto 2vw;
+	color:red;
+}
+
+.audioplay:focus{
+	outline:none;
+}
+
+.utplayer{
+	position:fixed;
+	margin-left:-30%
+}
+
+.moveback{
+	position:fixed;
+	left:30%;
+	top:50%;
+	margin-left:-35%
+}
+
+
+.top {
+    position:fixed;
+    right:2%;
+    bottom:2%;
+    padding:0.5%;
+    background-color: silver;
+    color:white;
+    border-radius: 20%;
+    text-decoration: none;
+}
+
+.top:hover {
+    background-color: indigo;
+}
+
+.portfolio{
+    position:fixed;
+    right:1.5%;
+    top:2%;
+    padding:0.5%;
+    color: silver;
+    font-size: 1vw;
+    text-decoration: none;
+    border: none;
+    background-color: white;
+}
+
+.portfolio:hover{
+    color: indigo;
+}
+
+.portfolio:focus{
+	outline:none;
+}
+
+.portfolio:hover + .drawer1{
+    top:2.4%;
+    transition: top 0.5s;
+}
+
+.effect {
+    position:fixed;
+    right:1.5%;
+    top:9%;
+    padding:0.5%;
+    color: silver;
+    font-size: 1vw;
+    text-decoration: none;
+    border: none;
+    background-color: white;
+}
+
+.effect :hover{
+    color: indigo;
+}
+
+.effect:focus{
+	outline:none;
+}
+
+.effect:hover + .drawer1{
+    top:9%;
+    transition: top 0.5s;
+}
+
+.drawer1{
+    position:fixed;
+    color: white;
+    background-color: indigo;
+    top:-6%;
+    right: 5%;
+    padding:0.2% 1%;
+    margin-top: 0.5%;
+	border-radius: 1vw;
+}
+
+.grayoff {
+    background-color: unset;
+}
+
+.grayon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity:0.8;
+    transition:background-color 1.5s;
+}
+
+.instruction{
+    position:absolute;
+    font-size: 2.5vw;
+    color:white;
+}
+
