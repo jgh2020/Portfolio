@@ -1,0 +1,89 @@
+body{
+	font-family: Helvetica;
+}
+
+header{
+	width: 1200px;
+	margin-top: 50px;
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+header img{
+	float: right;
+	width: 30%;
+	height: auto;
+}
+
+header button{
+	width: 120pt;
+	height: 35pt;
+	font-size: 15pt;
+	color: white;
+	float: right;
+	margin-right: 30pt; 
+	background-color: royalblue;
+	border-radius: 15px;
+	border: none;
+}
+			
+header button:hover {
+	background: aqua; 
+	color: black;
+}
+
+header h1, h2{
+	color: navy;
+	font-family: Georgia;
+}
+
+h3{
+	font-size:19px;
+}
+
+header h6{
+	color: skyblue;
+}
+
+a{
+	color:black;
+}
+
+a:hover{
+	color:aqua;
+}
+
+li{
+	font-size: 19px;
+	line-height: 26px;
+}
+
+.good{
+	color: royalblue;
+}
+
+.coverletter{
+	width: 1200px;
+	margin-top: 50px;
+	margin-left: auto; 
+	margin-right: auto; 
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	border:1px solid blue;
+	padding: 25px;
+	margin-bottom: 50px;
+	background-color: aliceblue;
+}
+
+.top {
+    padding:10px;
+	float:right;
+    background-color: indigo;
+    color:white;
+    border-radius: 20%;
+	text-decoration: none;
+}
+
+.top:hover {
+    background-color: aqua;
+	color:black;
+}

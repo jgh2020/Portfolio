@@ -1,0 +1,363 @@
+
+body {
+    margin:0;
+    padding:0;
+    border: none;
+    color:white;
+    
+}
+
+button, input{
+    padding:0;
+    margin:0;
+}
+
+.header1{
+    background: linear-gradient(black, black, dimgray);
+    height:4vw;
+}
+
+.header1 a {
+    color: silver;
+    float:right;
+    margin:2vh 1.5vw;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+
+.header1 a:hover{
+    color:white !important;
+}
+
+.header2{
+    position: sticky;
+    top:0%;
+    z-index: 10;
+    box-shadow: 0 0.8vh 3vh lightgray;
+    background-color: white;
+    height:10vh;
+}
+
+.header2 a{
+    color: goldenrod;
+    text-decoration: none;
+    line-height: 10vh;
+    font-size: 1.6vw;
+    font-family: Georgia;
+    float: left;
+    margin:0 3vw;
+    vertical-align: middle;
+}
+
+.header2 a:hover{
+    color: silver !important;
+}
+
+.logo{
+    margin: 0 5vw;
+    line-height: 10vh;
+    display:inline;
+    float: left;
+    font-size: 1.3vw;
+    font-family: Impact;
+    color:black;
+}
+
+.container{
+    transition:background-image 1.5s;
+    background-image:url('../img/coldplay.jpg');
+    height:82vh;
+}
+
+.filterdown{
+    position:absolute;
+    top:14%;
+    height:86%;
+    width:100%;   
+}
+
+.filterup{
+    position:absolute;
+    top:15%;
+    height:85.5%;
+    width:100%;   
+    background-color: black;
+    opacity: 0.7;
+}
+
+.drawbox{
+    position:absolute;
+    width:60%;
+    top:26.5%;
+    left:5%;
+}
+
+.title{
+    padding: 1vh 0;
+    font-family: Times New Roman;
+    font-size: 1.5vw;
+    color:silver;
+}
+
+.lyric{
+    font-size: 0.8vw;
+    font-family:Tahoma;
+    color:whitesmoke;
+    max-height: 50vh;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.title:hover{
+    cursor:pointer;
+    color:lemonchiffon!important;
+    text-shadow: 0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh lemonchiffon, 0 0 9vh lemonchiffon, 0 0 11vh lemonchiffon;
+
+} 
+
+.main{
+    height:40%;
+    width:25%;
+    padding:0%;
+    position: absolute;
+    top:28%;
+    right:5%;
+    border: solid beige;
+    border-width: 0.1vh 0.1vw;
+    border-radius: 4%;
+    overflow: hidden;
+}
+
+.img01{
+    position:absolute;
+    height: 170%;
+    width: 130%;
+    margin-left: -15%;
+    margin-top: -26%;
+    border-radius: 50%;
+    animation: rotate_image 360s linear infinite;
+    transform-origin: 50% 50%;
+    filter:sepia(1);
+    /* opacity: 1; */
+}
+
+@keyframes rotate_image{
+	100% {
+    transform: rotate(360deg);
+    }
+}
+
+.frame {
+    position:relative;
+    height: 30vh;
+    width: 15vw;
+    overflow-x: hidden;
+    margin:auto;
+    margin-top: 10%;
+}
+
+.line { 
+    margin-left : -15vw;
+    
+}
+
+.pic { 
+    display: table;
+    float: left;
+    height: 30vh; 
+    width: 15vw; 
+    font-size: 0;
+}
+
+.pic:hover{
+    filter:brightness(0.5);
+    transition: all 1s;
+}
+
+
+img{
+    height: 30vh; 
+    width: 15vw;
+    margin:0;
+    font-size: 0;
+}
+
+.main.radio{
+    background-color: transparent;
+    border:none;
+    border-radius: 0;
+    height:10%;
+    top: 70%;
+    text-align: center; 
+    padding:0%;
+    font-size: 0.05vw;
+    color:white;
+}
+
+input{
+    height:2vh;
+    width:2vw;
+    margin-top:2%;
+}
+
+.back{
+    position: absolute;
+    top:43%;
+    right:87%;
+    font-size: 3vw;
+    background-color: transparent;
+    border:none;
+    color:goldenrod;
+    margin:0%;
+}
+
+.next{
+    position: absolute;
+    top:43%;
+    right:5.5%;
+    font-size: 3vw;
+    background-color: transparent;
+    border:none;
+    color:goldenrod;
+}
+
+.back, .next:focus{
+    outline: none;
+}
+
+.back:hover{
+    color:silver;
+    cursor: pointer;
+}
+
+.next:hover{
+    color:silver;
+    cursor: pointer;
+}
+
+.singername{
+    position: absolute;
+    bottom:12%;
+    right:5.2%;
+    width:25%;
+    height:10vh;
+    font-size:2vw;
+    font-weight: bold;
+    text-align: center;
+    color:goldenrod;
+    line-height:10vh;
+}
+
+.members{
+    height: 80vh;
+    display:flex;
+    justify-content: center;
+}
+
+.eachmem{
+    height: 50vh;
+    width: 15vw;
+    background: linear-gradient(lavender, white);
+    margin:2.5vh 1.25vw;
+    margin-top:18vh;
+    text-align: center;
+    padding:3vh 1.5vw;
+}
+
+.circle{
+    width:6vw;
+    height: 12.5vh;
+    margin:0 auto;
+    margin-top:6%;
+    border-radius: 50%;
+    display: block;
+}
+
+.circle:hover{
+    border: 0.8vw solid lightblue;
+    transition: all 0.5s;
+}
+
+
+.bluename{
+    margin-top:4%;
+    background-color: slateblue;
+    font-size: 1vw;
+}
+
+.splyric{
+    margin-top:10%;
+    color:black;
+    font-size: 0.8vw;
+    font-weight: bold;
+    font-family:Papyrus;
+    
+}
+
+.upfooter{
+    height:6vh;
+    background-color: rgb(26, 26, 46);
+    opacity: 0.9;
+    padding-right: 9vw;
+}
+
+.upfooter a{
+    font-size: 1vw;
+    line-height: 7.8vh;
+    margin:0 1.5vw;
+    color:white;
+    float:right;
+}
+.upfooter a:hover{
+    color:grey;
+}
+
+.downfooter{
+    height: 14vh;
+    background-color: lavender;
+}
+
+.footercon{
+    width:8vw;
+    margin-top:1.5vh;
+    margin-left:3vw;
+    float:right;
+    border-right: 0.1vw solid orangered;
+    
+}
+
+.footercon a{
+    font-size: 0.9vw;
+    color: rgb(26, 26, 46);
+    font-family: arial;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 3.0vh;
+    display:block;
+    text-align: right;
+    margin-right:0.3vw;
+    
+
+}
+
+.footercon a:hover{
+    text-decoration: underline;
+}
+
+
+.top {
+    position:fixed;
+    right:2%;
+    bottom:2%;
+    padding:0.5%;
+    background-color: grey;
+    color:white;
+    border-radius: 20%;
+    text-decoration: none;
+    font-size: 1.05vw;
+    
+}
+
+.top:hover {
+    background-color: indigo;
+}

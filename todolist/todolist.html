@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"">
+    <link href="./css/style4.css" rel="stylesheet" type="text/css">
+    <title>Todo list</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fas fa-dog"></i>
+            <a href="todolist.html">To-do List</a>
+        </div>
+        
+        <ul class="today">
+            <li><a href="https://news.google.com/topstories?hl=en-CA&gl=CA&ceid=CA:en" target="_blank"><i class="fab fa-google"></i> News</a></li>
+            <li><a href="https://www.astrology.com/horoscope/daily.html" target="_blank"><i class="far fa-star"></i> Today's luck</a></li>
+            <li><a href="../index.php"><i class="fab fa-product-hunt"></i> Portfolio List</a></li>
+        </ul>
+        <ul class="socialmedia">
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+
+        <a href="#" class="togglebtn"><i class="fas fa-bars"></i></a>
+
+    </nav>
+
+    <main>
+        <form method="get" action="https://www.google.com/search" target="_blank" >   
+            <input type="text" name="q" value=""/>      
+            <button type="submit"><i class="fas fa-search"></i></button> 
+        </form>
+        
+        <div>
+            <section class="sectitle" id="sectitle1">
+                    <div><i class="fas fa-temperature-high"></i> Ottawa</div>
+                    <div>
+                        <div class="icon"></div>
+                        <div class="temp"></div>
+                    </div>
+                    <i class="fas fa-arrow-circle-down"></i>
+            </section>
+
+            <section class="seccontent" id="seccontent1" data-tilt>
+                <ul>
+                    <li class="description"></li>
+                    <li class="curtemp"></li>
+                    <li class="feellike"></li>
+                    <li class="windspeed"></li>
+                    <li>: Information from OpenWeather API</li>
+                </ul>    
+            </section>
+        </div>
+        <div>
+            <section class="sectitle" id="sectitle2">
+                    <div><i class="far fa-list-alt"></i> &nbsp;To-do List</div>
+                    <i class="fas fa-arrow-circle-down"></i>
+            </section>
+            <section class="seccontent" id="seccontent2" data-tilt>
+                <ul id="sortable">
+                </ul> 
+                <div>
+                    <input type="text"> 
+                    <button>Add</button>
+                </div>  
+            </section>
+            <span>* Sort lists by clicking and dragging.</span>            
+        </div>
+
+        <i class="far fa-clock"><span> Clock</span></i>
+        <div class = 'clockframe'>
+            <div id="todaydate"></div>
+            <section id="clock">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>:</div>
+                    <div></div>
+                    <div></div>
+            </section>
+            <span>Flip Clock</span>
+            <i class="far fa-eye-slash"></i>
+        </div>
+        
+        <div class='setting'>
+            <i class="fas fa-cog"></i>
+            <div>
+                <div>
+                    Background Image<br>
+                    <input type='radio' id='pic1' name='background'checked> Dog
+                    <input type='radio' id='pic2' name='background'> Cat
+                </div>
+                <div>
+                    <input type='checkbox' id='sticky'> Sticky note mode
+                </div>
+            </div>
+        </div>
+
+        <div class="greeting">
+            <P>Have a great day!</P>
+            <span><i class="far fa-smile"></i> Let's get caught up on some of the work we have to do today! </span>
+        </div>  
+    </main>
+    <script type="text/javascript" src="../index_js/vanilla-tilt.js"></script>
+</body>
+</html>
+
