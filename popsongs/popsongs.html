@@ -27,8 +27,6 @@
         </div>
 
         <div class="container"></div>
-        <div class="filterdown"></div>
-        <div class="filterup"></div>
         <div class="drawbox">
             <div class="title one" id="31" style="color:burlywood;" onclick="movedown(21)">Viva la Vida</div>
             <div class="lyric one" id="21">I used to rule the world Seas would rise when I gave the word Now in the morning, I sleep alone Sweep the streets I used to own I used to roll the dice Feel the fear in my enemy's eyes Listen as the crowd would sing Now the old king is dead, long live the king One minute I held the key Next the walls were closed on me And I discovered that my castles stand Upon pillars of salt and pillars of sand I hear Jerusalem bells are ringing Roman Cavalry choirs are singing Be my mirror, my sword and shield My missionaries in a foreign field For some reason I can't explain Once you go there was never, never an honest word And that was when I ruled the world It was a wicked and wild wind Blew down the doors to let me in Shattered windows and the sound of drums People.</div>
@@ -78,7 +76,7 @@
         <div class="singername">Coldplay</div>
 
         <div class="main radio">
-            <input class="rbutton" type="radio" name="slide" onchange="moveto(1)" id="1" checked>
+            <input type="radio" name="slide" onchange="moveto(1)" id="1" checked>
             <input type="radio" name="slide" onchange="moveto(2)" id="2">
             <input type="radio" name="slide" onchange="moveto(3)" id="3">
             <input type="radio" name="slide" onchange="moveto(4)" id="4">
@@ -135,6 +133,8 @@
                 </div>
             </div>
             <div><a class="top" href="#top" title="top">Top</a></div>
+            <div id="loading"><img id="loading-image" src="../index_img/stencil.jpg" alt="Loading"/><div class="loading_text">Loading...</div></div>
+    <script>window.onload = function(){document.getElementById('loading').style.display='none';}</script>       
     <script src="./js/script1.js"></script>
 </body>
 </html>

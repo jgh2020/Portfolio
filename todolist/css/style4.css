@@ -1,3 +1,54 @@
+#loading {
+    width: 100%;   
+    height: 100%;   
+    top: 0px;
+    left: 0px;
+    position: fixed;   
+    display: block; 
+    background-color: white;
+    z-index: 99; 
+}  
+    
+#loading-image {   
+    position: absolute;
+    top: 30%;   
+    left:50%;
+    transform: translateX(-50%);
+    width:10%;
+    height:100px;
+    width:100px;
+    border:2px solid navy;
+    border-radius: 100%;
+    z-index: 100; 
+    animation:ball 0.9s ease-in Infinite Alternate; 
+} 
+
+.loading_text{
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color:rgb(1, 1, 138);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@keyframes ball {
+    0% {
+      top:30%;
+      box-shadow: 0 25vh 10px -15px lightgray;
+    }
+    95% {
+      width: 100px;
+    }
+    to {
+      top:55%;
+      width:130px;
+      height:80px;
+      box-shadow: 0 2vh 1px dimgray;
+    } 
+  }
+
 :root{
     --text-color: rgb(240, 240, 240);
     --background-color: rgba(26, 33, 43, 0.5);
@@ -14,13 +65,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 body{
-    background-image:url('../img/background_puppy.jpg');
     height: 100vh;
     background-position: right 10% bottom 45%;
     background-size: cover;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
-    
+    background-image:url('../img/background_puppy.jpg');
+}
+
+body::after{
+    position:absolute; 
+    width:0; 
+    height:0; 
+    overflow:hidden; 
+    z-index:-10;
+    content:url('../img/background_cat.jpg');
 }
 
 a{

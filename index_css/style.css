@@ -6,17 +6,48 @@
     position: fixed;   
     display: block; 
     background-color: white;
-    z-index: 99;   
-    text-align: center; 
+    z-index: 99; 
 }  
     
 #loading-image {   
-    position: absolute;   
-    top: 50%;   
-    left: 50%;
-    transform: translateX(-50%);  
+    position: absolute;
+    top: 30%;   
+    left:50%;
+    transform: translateX(-50%);
+    width:10%;
+    height:100px;
+    width:100px;
+    border:2px solid navy;
+    border-radius: 100%;
     z-index: 100; 
+    animation:ball 0.9s ease-in Infinite Alternate; 
 } 
+
+.loading_text{
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color:rgb(1, 1, 138);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@keyframes ball {
+    0% {
+      top:30%;
+      box-shadow: 0 25vh 10px -15px lightgray;
+    }
+    95% {
+      width: 100px;
+    }
+    to {
+      top:55%;
+      width:130px;
+      height:80px;
+      box-shadow: 0 2vh 1px dimgray;
+    } 
+  }
 
 body{
     margin:0;
@@ -39,6 +70,40 @@ body{
             rgba(255, 255, 255, 1) 100%
           ), url('../index_img/sky.jpg');
         background-size: cover;
+}
+
+.sky>span{
+    position:absolute;
+    top:15px;
+    right:20px;
+}
+
+.sky>span span{
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.sky span img{
+    height:24px;
+    width:24px;
+    margin:5px;
+    border-radius:50%;
+    border: 2px solid white;
+}
+
+.sky span button:hover{
+    cursor:pointer;
+}
+
+.sky span button:hover span{
+    visibility: visible;
+}
+
+span button {
+    padding:0;
+    background-color:transparent;
+    border:unset;
+    color:white;
 }
 
 h1, h2, h3, div, p, a{
@@ -68,23 +133,23 @@ h2{
 
 h2:hover{
     cursor:pointer;
-    color:dimgray;
+    color:gray;
 }
 
-i{
-    color:deepskyblue;
+div h2 i{
+    color: rgb(255, 174, 66);
 }
 
 h4{
     font-size:1.2vw;
     text-align: right; 
-    color: darkorange;
+    color:darkorange;
     margin-right:5vw;
     font-family: Calibri;
     visibility:hidden;
 }
 
-button{
+h1 button{
     margin-top:3vh;
     width:280px;
     height:40px;
@@ -95,7 +160,7 @@ button{
     color:whitesmoke;
 }
 
-button:hover{
+h1 button:hover{
     cursor:pointer;
 }
 
@@ -112,7 +177,6 @@ table{
     margin-right:5vw;
     border-collapse:collapse;
 }
-
 
 .spring{
     margin-top:-10vh;
@@ -158,17 +222,16 @@ td img {
     margin-top:15vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:rgba(26, 23, 53);
-    font-size:1vw;
+    font-size:15px;
     font-weight:bold;
-    height:10vw;
     position:relative;
 }
 
 .stencil img{
-    height:60%;
-    border-radius:50%;
-    border:1px solid navy;
-    margin:2px;
+    height:93px;
+    width:93px;
+    border-radius:100%;
+    box-shadow:0px 5px 10px dimgray;
     position:absolute;
     left:50%;
     transform:translateX(-50%);
@@ -179,33 +242,18 @@ td img {
 .stencil img:nth-child(2){
     transform: translateX(-50%) rotateY(180deg);
     visibility:hidden;
-    border:1px solid white;
 }
 
-.stencil span{
+.stencil>div{
     position:relative;
-    top:65%;
-}
-
-#loading {
-    width: 100%;   
-    height: 100%;   
-    top: 0px;
-    left: 0px;
-    position: fixed;   
-    display: block; 
-    background-color: white;
-    z-index: 99;   
-    text-align: center; 
-}  
-    
-#loading-image {   
-    position: absolute;   
-    top: 50%;   
-    left: 50%;
-    transform: translateX(-50%);  
-    z-index: 100; 
+    top:100px;
 } 
+
+.stencil>div a i{
+    color:navy;
+    font-size: 28px;
+    margin: 10px 8px;
+}
 
 @media screen and (max-width:768px){
     h1{
@@ -229,15 +277,15 @@ td img {
 
     .stencil{
         margin-top:5vh;
-        font-size:2.5vw;
-        height:10vw;
+        font-size:13px;
     }
 
     .stencil img{
-        height:120%;
+        height:80px;
+        width:80px;;
     }
 
-    .stencil span{
-        top:130%;
+    .stencil>div{
+        top:85px;
     }
 }

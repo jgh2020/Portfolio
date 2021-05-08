@@ -65,9 +65,7 @@ $(function(){
             min1.text(parseInt(min/10));
             min2.text(min%10);
         }
-
         rotation();
-        setTimeout(() => {deleteRotation();}, 4000);
     }
 
     function rotation(){
@@ -77,6 +75,7 @@ $(function(){
         setTimeout(() => {min1.addClass('show').addClass('rotate');}, 1500);
         setTimeout(() => {min2.addClass('show').addClass('rotate');}, 1700);
         setTimeout(() => {colon.css('color','var(--text-color)');}, 2000);
+        setTimeout(() => {deleteRotation();}, 5000);
     }
 
     function deleteRotation(){
@@ -318,12 +317,16 @@ $(function(){
             $('nav, .sectitle, form button, main>i, .greeting').css({'--text-color':'rgb(240, 240, 240)'});
             $(':root').css({'--accent-color':'orange', '--accent-color2':'darkorange', '--accent-color3':'rgb(255, 217, 0)'});
             $('nav>div>i').removeClass('fas fa-cat').addClass('fas fa-dog');
+            rotation();
+            // setTimeout(() => {deleteRotation();}, 4000);
         }else if ($('#pic2').prop('checked')) {
             $('body').css({'background-image':"url('./img/background_cat.jpg')",'transition':'all 1s'});
             $('nav, .sectitle, form button, main>i, .greeting').css({'--text-color':'rgb(38, 55, 74)'});
             $(':root').css({'--accent-color':'mediumslateblue', '--accent-color2':'navy', '--accent-color3':'pink'});
             $('.seccontent').css({'color':'var(--text-color)'});
             $('nav>div>i').removeClass('fas fa-dog').addClass('fas fa-cat');
+            rotation();
+            // setTimeout(() => {deleteRotation();}, 4000);
         }
     })
 

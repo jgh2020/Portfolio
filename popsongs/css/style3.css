@@ -6,24 +6,54 @@
     position: fixed;   
     display: block; 
     background-color: white;
-    z-index: 99;   
-    text-align: center; 
+    z-index: 99; 
 }  
     
 #loading-image {   
-    position: absolute;   
-    top: 50%;   
-    left: 50%;
-    transform: translateX(-50%);  
+    position: absolute;
+    top: 30%;   
+    left:50%;
+    transform: translateX(-50%);
+    width:10%;
+    height:100px;
+    width:100px;
+    border:2px solid navy;
+    border-radius: 100%;
     z-index: 100; 
+    animation:ball 0.9s ease-in Infinite Alternate; 
 } 
+
+.loading_text{
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color:rgb(1, 1, 138);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@keyframes ball {
+    0% {
+      top:30%;
+      box-shadow: 0 25vh 10px -15px lightgray;
+    }
+    95% {
+      width: 100px;
+    }
+    to {
+      top:55%;
+      width:130px;
+      height:80px;
+      box-shadow: 0 2vh 1px dimgray;
+    } 
+  }
 
 body {
     margin:0;
     padding:0;
     border: none;
     color:white;
-    
 }
 
 button, input{
@@ -86,22 +116,7 @@ button, input{
     transition:background-image 1.5s;
     background-image:url('../img/coldplay.jpg');
     height:82vh;
-}
-
-.filterdown{
-    position:absolute;
-    top:14%;
-    height:86%;
-    width:100%;   
-}
-
-.filterup{
-    position:absolute;
-    top:15%;
-    height:85.5%;
-    width:100%;   
-    background-color: black;
-    opacity: 0.7;
+    filter:brightness(40%);
 }
 
 .drawbox{
@@ -131,7 +146,6 @@ button, input{
     cursor:pointer;
     color:lemonchiffon!important;
     text-shadow: 0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh lemonchiffon, 0 0 9vh lemonchiffon, 0 0 11vh lemonchiffon;
-
 } 
 
 .main{
@@ -193,7 +207,6 @@ button, input{
     transition: all 1s;
 }
 
-
 img{
     height: 30vh; 
     width: 15vw;
@@ -201,22 +214,34 @@ img{
     font-size: 0;
 }
 
-.main.radio{
-    background-color: transparent;
+.radio{
     border:none;
-    border-radius: 0;
     height:10%;
     top: 70%;
     text-align: center; 
     padding:0%;
     font-size: 0.05vw;
-    color:white;
 }
 
-input{
-    height:2vh;
-    width:2vw;
-    margin-top:2%;
+input[type='radio'], input[type='radio']:checked {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+input[type='radio'] {
+    background-color: silver;
+    border: 2px solid  white;
+}
+
+input[type='radio']:checked {
+    background-color: black;
+}
+
+input[type='radio']:hover {
+    background-color: darkred;
 }
 
 .back{
@@ -276,7 +301,7 @@ input{
 .eachmem{
     height: 50vh;
     width: 15vw;
-    background: linear-gradient(lavender, white);
+    background: linear-gradient(rgb(243, 243, 245), white);
     margin:2.5vh 1.25vw;
     margin-top:18vh;
     text-align: center;
@@ -300,7 +325,7 @@ input{
 
 .bluename{
     margin-top:4%;
-    background-color: slateblue;
+    background-color: rgba(0, 0, 128, 0.7);
     font-size: 1vw;
 }
 
@@ -310,7 +335,6 @@ input{
     font-size: 0.8vw;
     font-weight: bold;
     font-family:Papyrus;
-    
 }
 
 .upfooter{
@@ -333,7 +357,7 @@ input{
 
 .downfooter{
     height: 14vh;
-    background-color: lavender;
+    background-color: rgba(173, 216, 230, 0.3);
 }
 
 .footercon{
@@ -342,7 +366,6 @@ input{
     margin-left:3vw;
     float:right;
     border-right: 0.1vw solid orangered;
-    
 }
 
 .footercon a{
@@ -355,14 +378,11 @@ input{
     display:block;
     text-align: right;
     margin-right:0.3vw;
-    
-
 }
 
 .footercon a:hover{
     text-decoration: underline;
 }
-
 
 .top {
     position:fixed;
@@ -374,7 +394,6 @@ input{
     border-radius: 20%;
     text-decoration: none;
     font-size: 1.05vw;
-    
 }
 
 .top:hover {

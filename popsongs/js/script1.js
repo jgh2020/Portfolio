@@ -12,7 +12,7 @@
     line.style.width = picwidth * (piclen) + "vw";
     let curIndex = 1; 
 
-        function gonext(){
+    function gonext(){
         if (curIndex <= piclen - 2) { // 1 2 3 4
             curIndex++;
             line.style.transition = speed + "ms";
@@ -29,42 +29,44 @@
         }
         document.getElementById(curIndex).checked = true;
             change(curIndex);
+    }
+
+    function moveto(num){
+        curIndex = num-1;
+        gonext();
+        curIndex = num;
+    }
+
+    function change(num){
+        singername.style.transition = "1s";
+        singername.style.transform = "rotateX(360deg)";
+
+        if (num == 1){
+            singername.innerHTML  = "Coldplay";
+            container.style.backgroundImage = "url(./img/coldplay.jpg)";
+        }else if(num == 2){
+            singername.innerHTML  = "The Weeknd";
+            container.style.backgroundImage = "url(./img/weeknd.png)";
+        }else if(num == 3){
+            singername.innerHTML  = "BTS";
+            container.style.backgroundImage = "url(./img/bts.png)";
+
+        }else if(num == 4){
+            singername.innerHTML  = "The Alan Parsons Project";
+            container.style.backgroundImage = "url(./img/days.jpg)";
         }
+        setTimeout(function(){
+            singername.style.transition = "0s";
+            singername.style.transform = "rotateX(0deg)";
+            singername.style.color = "lemonchiffon"; 
+            singername.style.textShadow = "0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh lemonchiffon, 0 0 9vh lemonchiffon, 0 0 11vh lemonchiffon";
+        }, 1000);
 
-        function moveto(num){
-            curIndex = num-1;
-            gonext();
-            curIndex = num;
-        }
-
-        function change(num){
-            singername.style.transition = "1s";
-            singername.style.transform = "rotateX(360deg)";
-
-            if (num == 1){
-                singername.innerHTML  = "Coldplay";
-                container.style.backgroundImage = "url(./img/coldplay.jpg)";
-            }else if(num == 2){
-                singername.innerHTML  = "The Weeknd";
-                container.style.backgroundImage = "url(./img/weeknd.png)";
-            }else if(num == 3){
-                singername.innerHTML  = "BTS";
-                container.style.backgroundImage = "url(./img/bts.png)";
-
-            }else if(num == 4){
-                singername.innerHTML  = "The Alan Parsons Project";
-                container.style.backgroundImage = "url(./img/days.jpg)";
-            }
-            setTimeout(function(){
-                singername.style.transition = "0s";
-                singername.style.transform = "rotateX(0deg)";
-                singername.style.textShadow = "0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh gold, 0 0 9vh gold, 0 0 11vh gold";
-            }, 1000);
-
-            setTimeout(function(){
-                singername.style.textShadow = "unset";
-            }, 1400);
-        }
+        setTimeout(function(){
+            singername.style.textShadow = "unset";
+            singername.style.color = "goldenrod"; 
+        }, 1400);
+    }
 
     backbtn.addEventListener('click', function() {
         curIndex--;
