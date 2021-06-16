@@ -68,7 +68,7 @@ body{
             rgba(255, 255, 255, 0.5) 50%,
             rgba(255, 255, 255, 0.75) 75%,
             rgba(255, 255, 255, 1) 100%
-          ), url('../index_img/sky.jpg');
+          ), url('../img/sky.jpg');
         background-size: cover;
 }
 
@@ -255,14 +255,31 @@ td img {
     margin: 10px 8px;
 }
 
-@media screen and (max-width:768px){
-    h1{
-        font-size:7vw;
-    }
+.newPo{
+    position:fixed;
+    bottom:40px;
+    right:40px;
+    font-size: 30px;
+    font-family:sans-serif;
+    font-weight:bolder;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color:white;
+    text-decoration: none;
+}
 
-    h2{
-        font-size:5vw;
-    }
+.newPo:hover i{
+    transform: translateX(20px);
+    transition: all 0.5s;
+}
+
+.newPo:hover{
+    /* color:blue; */
+    text-shadow: 2px 2px 10px blue;
+}
+
+@media screen and (max-width:768px){
+    h1{ font-size:7vw; }
+    h2{ font-size:5vw; }
 
     th:nth-child(1), td:nth-child(1){ width: 15%; font-size:18px;}
     th:nth-child(2), td:nth-child(2) { font-size:18px; width:50%;}

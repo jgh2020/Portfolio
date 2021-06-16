@@ -10,7 +10,9 @@
 	
 
         <h2 style="font-family: Tahoma;"><em>Welcome</em></h2>
-        <p style="font-size: 13pt; margin : 10px"><b>Hello, My name is Seungkyun Kim (go by James) who applied for your company. This is my portfolio, and the concept of this is a website where foreigners study English words. This website is connected to the phpMyAdmin DB, and the words provided by this site are from that DB. Because my native language is Korean, this site is currently composed of English and Korean words.</b></p>
+        <p style="font-size: 13pt; margin : 10px"><b>Hello, My name is Seungkyun Kim (James). This is one of my website works; the concept 
+			is a website where foreigners could study English words. This website is connected to the phpMyAdmin DB, 
+			and the words provided by this site are from that DB. Because my native language is Korean, this site currently contains English and Korean words.</b></p>
 		
 		<h5>&nbsp;</h5>
 					
@@ -33,13 +35,13 @@
 			
 		
 				<ol>
-				<li>Main : The main page is where you are now. Please click the owl with sound on.</li>
+				<li>Main : The main page is where you are now. Please click the owl with the sound on.</li>
 					
-				<li>Vocabulary : Full vocabulary list. You can add, modify, or delete on the list. You can also study 12 random words.</li>
+				<li>Vocabulary : Full vocabulary list. You can add to, modify, or delete from the list. You can also study 12 random words.</li>
 				
 				<li>Games : You can study words through some games here. You can also generate a set of lottery numbers for fun as a short break.</li>
 				
-				<li>Portfolio List : This moves you to the Portfolio List page.</li>
+				<li>Portfolio : This moves you to the main Portfolio page.</li>
 			
 				<li>Search : You can look up a word in the database in English or Korean.</li>
 			</ol>

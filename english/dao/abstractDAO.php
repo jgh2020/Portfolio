@@ -5,10 +5,10 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 class abstractDAO {
 	
     protected $mysqli;
-    protected static $DB_HOST = "127.0.0.1:3308";     
-    protected static $DB_USERNAME = "eng_kor";     
-    protected static $DB_PASSWORD = "password";     
-    protected static $DB_DATABASE = "eng_kor"; 
+    protected static $DB_HOST = "localhost"; 
+    protected static $DB_USERNAME = "kimportfollio"; 
+    protected static $DB_PASSWORD = "qing25781228!"; 
+    protected static $DB_DATABASE = "kimportfollio";
     
     function __construct() {
         try{

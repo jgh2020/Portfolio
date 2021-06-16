@@ -15,12 +15,16 @@
                 <div id="menuItems">
                     <ul>
 						<form name="search" id="search" method="post" action="searchWord.php">
-							<li><a href="english.php">Main</a></li>
+							<li><a href="#">Main</a></li>
 							<li><a href="word_list.php">Vocabulary</a></li>
 							<li><a href="hangman.php">Games</a></li>
-							<li><a href="../index.php">Portfolio List</a></li>
+							<li><a href="../index.html">Portfolio</a></li>
 							<li><input type="text" name="keyword" id="keyword" size='20' placeholder="keyword here!" style="font-size: 15pt;"><input type='submit' name='btnSubmit' id='btnSubmit' value='🔍' style="font-size: 13pt;"></li>
 						</form>
                     </ul>
                 </div>
             </nav>
+
+
+
+            

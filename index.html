@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"">
+    <link href="./index_css/style.css" rel="stylesheet" type="text/css">
+    <title>Kim's Portfolio</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="./index_js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('user_odePANChsqGCw2kCPtFrY');
+        })();
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            $('#loading').hide(); // loading ======================================================
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                this.contact_number.value = Math.random() * 100000 | 0;
+
+                var userName = document.getElementById('nameInput').value;
+                var userEmail = document.getElementById('emailInput').value;
+                var userMessage = document.getElementById('messageInput').value;
+
+                if ( userName == '' || userEmail == '' || userMessage == ''){
+                    alert('Please fill in all 3 fields!');
+                }else{
+                    emailjs.sendForm('service_0wcesbx', 'template_fhax1zs', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                            alert('SUCCESS!');
+                            document.getElementById('nameInput').value = '';
+                            document.getElementById('emailInput').value = '';
+                            document.getElementById('messageInput').value = '';
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('FAILED...');
+                        });
+                }        
+            });
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href='https://www.linkedin.com/in/james-kim-a846a1211?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6q9akq3fQTORU6bKCz8FYg%3D%3D' target='_blank'><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href='https://github.com/jgh2020' target='_blank'><i class="fab fa-github"></i></a></li>
+                    <li><a href="mailto:jamesgold.ksk@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                </ul>
+                <ul class='navSecondul'>
+                    <li><a href="#chartPage">Skill</a></li>
+                    <li><a href="#webPages">Work</a></li>
+                    <li><a href="#summaryWheel">Contact</a></li>
+                    <li class="navClosebtn"><i class="fas fa-times"></i></li>
+                </ul>
+                <a href="#" class="togglebtn"><i class="fas fa-bars"></i></a>
+            </nav>
+        </header>
+
+        <main>
+            <p id="mouseFollower">Click!</p>
+            <div id="landContainer">
+                <div class="row" id="landPage"> <!-- #landPag -->
+                    <section class="col-6 col-lg-5"> <!--   1st   -->
+                        <div> <!--   frame   -->
+                            <div class = 'cube'> <!--   cube   -->
+                                <div class = 'front'><img src="./index_img/webp1.jpg" alt="first"><span><h1>Hello there,</h1><h2>Here's an innovative</h2><span></div>
+                                <div class = 'right'><img src="./index_img/cobweb1.jpg" alt="second"><span><h1>Hey there,</h1><h2>Let me introduce a</h2><span></div>
+                                <div class = 'back'><img src="./index_img/bulb1.jpg" alt="third"><span><h1>Hello there,</h1><h2>Here's an innovative</h2><span></div>
+                                <div class = 'left'><img src="./index_img/cobweb1.jpg" alt="forth"><span><h1>Hey there,</h1><h2>Let me introduce a</h2><span></div>
+                            </div>
+                        
+                        </div>
+                    </section>
+
+                    
+                    <section class="col-6 col-lg-5"> <!--   2nd   -->
+                        <div>
+                            <div class = 'cube'> <!--   cube   -->
+                                <div class = 'front'><img src="./index_img/webp2.jpg" alt="first"><span><h1>what's up?<h1><h2>Web Developer.</h2></span></div>
+                                <div class = 'right'><img src="./index_img/cobweb2.jpg" alt="second"><span><h1>what's new?<h1><h2>Web Creator.</h2></span></div>
+                                <div class = 'back'><img src="./index_img/bulb2.jpg" alt="third"><span><h1>what's up?<h1><h2>Web Developer.</h2></span></div>
+                                <div class = 'left'><img src="./index_img/cobweb2.jpg" alt="forth"><span><h1>what's new?<h1><h2>Web Creator.</h2></span></div>
+                            </div>
+                        </div>
+                    </section>
+            
+                    <section class="col-lg-2 order-5 order-lg-3"> <!--   3rd  / space  -->
+                    
+                    </section>
+
+                    <section class="col-6 col-lg-5 order-lg-4"> <!--   4th  -->
+                        <div>
+                            <div class = 'cube'> <!--   cube   -->
+                                <div class = 'front'><img src="./index_img/webp3.jpg" alt="first">
+                                    <span>
+                                        <h2>My name is</h2>
+                                        <h5>I'm full of ideas so I always develop remarkable webs.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'right'><img src="./index_img/cobweb3.jpg" alt="second">
+                                    <span>
+                                        <h2>Everybody calls me</h2>
+                                        <h5>I'm a hard worker so I always build webs and fix them.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'back'><img src="./index_img/bulb3.jpg" alt="third">
+                                    <span>
+                                        <h2>My name is</h2>
+                                        <h5>I'm full of ideas so I always develop remarkable webs.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'left'><img src="./index_img/cobweb3.jpg" alt="forth">
+                                    <span>
+                                        <h2>Everybody calls me</h2>
+                                        <h5>I'm a hard worker so I always build webs and fix them.</h5>
+                                    <span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="col-6 col-lg-5 order-lg-5"> <!--   5th   -->
+                        <div>
+                            <div class = 'cube'> <!--   cube   -->
+                                <div class = 'front'><img src="./index_img/webp4.jpg" alt="first">
+                                    <span>
+                                        <h2>James.
+                                            <a id='resume' href='./resume/password.php'>More about me</a>
+                                        </h2>
+                                        <h5>I like creating dynamic webs as they are more exciting.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'right'><img src="./index_img/cobweb4.jpg" alt="second">
+                                    <span>
+                                        <h2>Spider. <i class="fas fa-spider"></i></h2>
+                                        <h5>My webs are flawless as it's my way to make a living.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'back'><img src="./index_img/bulb4.jpg" alt="third">
+                                    <span>
+                                        <h2>James.
+                                            <a id='resume' href='./todolist/todolist.html'>More about me</a>
+                                        </h2>
+                                        <h5>I like creating dynamic webs as they are more exciting.</h5>
+                                    <span>
+                                </div>
+                                <div class = 'left'><img src="./index_img/cobweb4.jpg" alt="forth">
+                                    <span>
+                                        <h2>Spider. <i class="fas fa-spider"></i></h2>
+                                        <h5>My webs are flawless as it's my way to make a living.</h5>
+                                    <span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section class="col-lg-2 order-last"> <!--   6th  space  -->
+                        <button><a href="./old_pf/old_pf.html">Portfolid (Previous ver.)</a></button>
+                        <button><a href="./todolist/todolist.html">To-do List</a></button>
+                        <button><a href="./popsongs/popsongs.html">4 Pop Songs</a></button>
+                        <button><a href="./english/english.php">English Vocabulary Study</a></button>
+                    </section> 
+                </div> <!-- #landPage -->   
+            </div> <!-- #landContainer -->     
+
+            <div class="row" id="chartPage"> <!-- #chartPage -->
+                <section class="col-lg-4 col-md-6">
+                    <div><i class="fas fa-desktop"></i> &nbsp;Frontend</div>
+                    <div><canvas id="chartOne"></canvas></div>
+                    <p>Willingness to learn new skills : 200% 👍<br>
+                        <span>I enjoy learning new programming languages. 
+                            I'm always prepared to learn new skills and always looking for innovative ways to display data.  
+                        </span>
+                    </p>
+                </section >
+                <section class="col-lg-4 col-md-6">
+                    <div><i class="fas fa-server"></i> &nbsp;Backend</div>
+                    <div><canvas id="chartTwo"></canvas></div>
+                    <p>Ability to learn new skills : 200% 👍<br>
+                        <span>I learn new programming languages quickly. 
+                            I already have a good understanding of many major languages.
+                            With this solid base, new languages will come easily.
+                        </span>
+                    </p>
+                </section>
+
+                <section class="col-lg-4 col-md-6">
+                    <div><i class="fas fa-plus-circle"></i> &nbsp;Plus</div>
+                    <div>
+                        <div><canvas id="chartThree_first"></canvas></div>
+                        <div><canvas id="chartThree_second"></canvas></div>
+                        <div><canvas id="chartThree_third"></canvas></div>
+                        <div><canvas id="chartThree_forth"></canvas></div>
+                    </div>
+                </section>
+
+                <section class="col-lg-12 col-md-6">
+                    <div>
+                        <p><img src="./index_img/html5.png" alt="html5"><span>HTML5<br>100%</span></p>
+                        <p><img src="./index_img/css3.png" alt="css3"><span>CSS3<br>100%</span> </p>
+                        <p><img src="./index_img/js.png" alt="js"><span>JavaScript<br>90%</span> </p>
+                        <p><img src="./index_img/jquery.png" alt="jquery"><span>jQuery<br>90%</span> </p>
+                        <p><img src="./index_img/react.png" alt="react"><span>React<br>80%</span> </p>
+                        <p><img src="./index_img/bootstrap.png" alt="bootstrap"><span>Bootstrap<br>85%</span> </p>
+                        <p><img src="./index_img/php.png" alt="php"><span>PHP<br>90%</span></p>
+                        <p><img src="./index_img/java.png" alt="java"><span>Java<br>90%</span> </p>
+                        <p><img src="./index_img/python.png" alt="python"><span>Python<br>85%</span> </p>
+                        <p><img src="./index_img/db.png" alt="db"><span>Data Base<br>95%</span> </p>
+                        <p><img src="./index_img/rest.jpg" alt="restapi"><span>REST API<br>80%</span> </p>
+                        <p><img src="./index_img/json.jpg" alt="json"><span>JSON<br>80%</span> </p>
+                        <p><img src="./index_img/android.png" alt="android"><span>Android<br>85%</span> </p>
+                        <p><img src="./index_img/linux.png" alt="linux"><span>Linux<br>85%</span> </p>
+                        <p><img src="./index_img/github.png" alt="github"><span>GitHub<br>80%</span> </p>
+                        <p><img src="./index_img/wordpress.png" alt="wordpress"><span>Wordpress<br>80%</span> </p>
+                    </div>
+            </div>
+
+            <div class="row" id="webPages"> <!-- #webPages -->
+                <section class="col-xl-10"><button>All</button><button>Frontend</button><button>Backend</button></section>
+                <section class="col-xl-4 col-md-6">
+                    <div> <!-- frame -->
+                        <div>
+                            <a href='#'><img src="./index_img/newpflist.jpg" alt=""></a>
+                            <p>Portfolio (Current page)<br><span>Date Created : 2021 Jun.</span></p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>Bootstrap / Chart.js / EmailJS / jQuery</li>
+                                    <li>HTML5 / CSS / Java Script</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Introduction to Skill & Work</li>
+                                    <li>Responsive web layout</li>
+                                    <li>Graphs of comprehension of skills</li>
+                                    <li>Contact (EmailJS)</li>
+                                    <li>3D Design / Following text</li>
+                                </ul>                            
+                            </h6>
+                        </div>
+                        <i class="fas fa-info-circle"></i> 
+                    </div>    
+                </section>
+                
+                <section class="col-xl-4 col-md-6">
+                    <div>
+                        <div>
+                            <a href='./old_pf/old_pf.html'><img src="./old_pf/img/pflist.jpg" alt=""></a>
+                            <p>Portfolio (Previous Ver.)<br><span>Date Created : 2021 Apr.</span>  </p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>jQuery</li>
+                                    <li>HTML5 / CSS / Java Script</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Responsive web layout</li>
+                                    <li>CSS loading animation</li>
+                                    <li>Tilt effect on hover (Open source : https://micku7zu.github.io/vanilla-tilt.js/)</li>
+                                    <li>Introduction to each web page</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <i class="fas fa-info-circle"></i>     
+                    </div>   
+
+                </section>
+                <section class="col-xl-4 col-md-6">
+                    <div>
+                        <div>
+                            <a href='./todolist/todolist.html'><img src="./old_pf/img/todolistnew.jpg" alt=""></a>
+                            <p>To-do List<br><span>Date Created : 2021 Mar.</span></p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>jQuery</li>
+                                    <li>HTML5 / CSS / Java Script</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Weather API (OpenWeather)</li>
+                                    <li>Responsive web layout</li>
+                                    <li>CSS loading animation / localStorage</li>
+                                    <li>Flip clock / Eye rest notification</li>
+                                    <li>Background mode change / Google search</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <i class="fas fa-info-circle"></i>    
+                    </div>        
+                </section>
+
+                <section class="col-xl-4 col-md-6">
+                    <div>
+                        <div>
+                            <a href='./popsongs/popsongs.html'><img src="./old_pf/img/4popsongs2.jpg" alt=""></a>
+                            <p>4 Pop Songs<br><span>Date Created : 2021 Feb.</span></p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>Java Script</li>
+                                    <li>HTML5 / CSS</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Youtube API / Slide</li>
+                                    <li>Audio player</li>
+                                    <li>CSS loading animation</li>
+                                    <li>Running clock</li>
+                                    <li>Event locations</li>
+                                </ul>
+                            </h6>
+                        </div>  
+                        <i class="fas fa-info-circle"></i>
+                    </div>       
+                </section>
+
+                <section class="col-xl-4 col-md-6">
+                    <div class="backend">
+                        <div>
+                            <a href='./english/english.php'><img src="./old_pf/img/english.jpg" alt=""></a>
+                           <p>English Vocabulary Study<br><span>Date Created : 2021 Jan.</span></p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>PHP / Data Base</li>
+                                    <li>HTML5 / CSS / Java Script</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Connection to PHPmyAdmin DB</li>
+                                    <li>CRUD</li>
+                                    <li>Pagination</li>
+                                    <li>Hangman game / Multiple choice quiz</li>
+                                    <li>Lotto number generator</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <i class="fas fa-info-circle"></i>
+                    </div>        
+                </section>
+                
+                <section class="col-xl-4 col-md-6">
+                    <div class="plan">
+                        <div>
+                            <a><img src="./index_img/question.jpg" alt=""></a>
+                            <p>Next plan<br><span>Date Created : 2021 ??</span></p>
+                            <h6>Used Programs
+                                <ul>
+                                    <li>React / jQuery</li>
+                                    <li>HTML5 / CSS / Java Script</li>
+                                </ul>  
+                            </h6>
+                            <h6>Function & Characteristics
+                                <ul>
+                                    <li>Blog</li>
+                                    <li>or</li>
+                                    <li>Movie review</li>
+                                    <li>...</li>
+                                    <li>Any ideas?</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <i class="fas fa-info-circle"></i>
+                    </div>      
+                </section>
+                <section class="col-xl-10">
+                    <p>All the webpages here are my own work, including planning, design, coding, testing, and hosting.
+                        You will see continued development of my productions over time.</p>
+                </section>
+            </div>
+
+          
+            <div class="row" id="summaryWheel"> <!-- #summaryWheel -->
+            
+                <section class="col-lg-4 order-2 order-lg-1">
+                    <div class='dial'><i class="fas fa-sort-up"></i><span>3D<br>OFF</span>
+                    
+                            <button class='cards'>All</button>
+                            <button class='cards'>1</button>
+                            <button class='cards'>2</button>
+                            <button class='cards'>3</button>
+                            <button class='cards'>4</button>
+                            <button class='cards'>5</button>
+                            <button class='cards'>All</button>
+                            <button class='cards'>1</button>
+                            <button class='cards'>2</button>
+                            <button class='cards'>3</button>
+                            <button class='cards'>4</button>
+                            <button class='cards'>5</button>
+                    </div>
+                </section>
+                <section class="col-lg-8 order-1 order-lg-2">
+                    <h1>Please say Hello!
+                    <h6>Please play with the wheel on the left (or below) and take another look at the summary of my skills. I'd appreciate it if you would leave a review. 
+                        You can also contact me via email: <a href="mailto:jamesgold.ksk@gmail.com">jamesgold.ksk@gmail.com</a> .</h6>
+
+                    </h1>
+                    <form id="contact-form">
+
+                        
+                        <div class="form-group">
+
+                        <input type="hidden" name="contact_number">
+
+                        <label for="nameInput">Name</label>
+                        <input type="name" name="from_name" class="form-control" id="nameInput" placeholder="Enter your name">
+
+                        <label for="emailInput">Email</label>
+                        <input type="email" name="reply_to" class="form-control" id="emailInput" placeholder="Enter your email">
+
+                        <label for="messageInput">Message or Review</label>
+                        <textarea class="form-control" name="message" id="messageInput" rows="3" placeholder="Enter your message"></textarea>
+
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Send</button>
+                        <!-- <input type="submit" value="Send"> -->
+                    </form>
+                </section>
+            </div>
+
+            <div class="row" id="summaryCards"> <!-- #summaryCards -->
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>1. Algonquin college computer programming <span class="badge bg-primary">with Honour</span></h5> </section>
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>2. Three (+2) great webpages from scratch <span class="badge bg-info">Scroll up</span></h5> </section>
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>3. Skilled at web programs (Front + back) <span class="badge bg-success">A+</span></h5> </section>
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>4. Android, Linux, GitHub, Wordpress, Zoom <span class="badge bg-danger">and more</span></h5> </section>
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>5. Team player, problem solver, meticulous <span class="badge bg-warning">Great</span></h5> </section>
+                <section class="col-xl-2 col-lg-4 col-md-6"><h5>6. Hard worker, responsibility, trilingual <span class="badge bg-secondary">Wow</span></h5> </section>
+            </div>
+
+            <a href="#"><button class="gototop">Top</button></a>
+
+        </main><!-- //content -->
+
+        <footer>
+            <div class="row"> <!-- footer .row: -->
+                    <section class="col-lg-3 col-md-6">
+                        <ul>
+                            <li><a href="#">Main</a></li>
+                            <li><a href="#chartPage">Skill</a></li>
+                            <li><a href="#webPages">Work</a></li>
+                            <li><a href="#summaryWheel">Contact</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-3 col-md-6">
+                        <ul>
+                            <li><a href="./old_pf/old_pf.html">Portfolio (Previous ver.)</a></li>
+                            <li><a href="./todolist/todolist.html">To-do List</a></li>
+                            <li><a href="./popsongs/popsongs.html">4 Pop Songs</a></li>
+                            <li><a href="./english/english.php">English Vocabulary Study</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-3 col-md-6">
+                        <ul>
+                            <li><a href="./resume/password.php">Resume</a></li>
+                            <li><a href="./resume/password.php">Cover letter</a></li>
+                            <li><a href="mailto:jamesgold.ksk@gmail.com">Email</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-3 col-md-6">
+                        <ul>
+                            <li><a href='https://www.linkedin.com/in/james-kim-a846a1211?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6q9akq3fQTORU6bKCz8FYg%3D%3D' target='_blank'>Linkedin</a></li>
+                            <li><a href='https://github.com/jgh2020' target='_blank'>Guthub</a></li>
+                        </ul>
+                    </section>
+                    <p>Thank you for visiting my portfolio. Have a great day! &copy; 2021 Seungkyun Kim. All Rights Reserved.</p>
+            </div>
+        </footer>   
+    </div>
+
+
+    <div id="loading">
+        <div id = "loading_image">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status"></div>Loading...
+        </div>
+    </div>
+
+    <!-- <div id="loading"><img id="loading-image" src="./index_img/stencil.jpg" alt="Loading"/><div class="loading_text">Loading...</div></div> -->
+    <!-- <script type="text/javascript">window.onload = function(){
+        $('#loading').hide();
+    
+    }</script> -->
+
+</body>
+</html>
+

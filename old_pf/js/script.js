@@ -3,7 +3,7 @@ $(function(){
     $('.spring').animate({'margin-top':0}, 1000, 'easeOutBounce');
 
     $('span button').eq(1).click(function(){
-        $('h1 span').text('포트폴리오 리스트').css({'font-family':'궁서'});
+        $('h1 span').text('포트폴리오').css({'font-family':'궁서'});
         $('h1 button').text('이력서 & 자기소개서');
         $('h2 span').eq(0).text(' 프론트앤드 & 디자인').css({'font-family':'궁서'});
         $('h2 span').eq(1).text(' 백앤드').css({'font-family':'궁서'});
@@ -12,7 +12,7 @@ $(function(){
     });
 
     $('span button').eq(0).click(function(){
-        $('h1 span').text("Kim's Portfolio List").css({'font-family':'Georgia'});
+        $('h1 span').text("Kim's Portfolio").css({'font-family':'Georgia'});
         $('h1 button').text('Resume & Cover Letter');
         $('h2 span').eq(0).text(' Frontend & Design').css({'font-family':'Georgia'});
         $('h2 span').eq(1).text(' Backend').css({'font-family':'Georgia'});
