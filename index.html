@@ -27,6 +27,10 @@
         window.onload = function() {
 
             $('#loading').hide(); // loading ======================================================
+            $(window).scrollTop(0);
+            if($(window).width() >=992) {
+                $('.cube').css({'transform':'translateZ(-20vw)'});
+            }else $('.cube').css({'transform':'translateZ(-25vw)'});
 
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -67,9 +71,9 @@
                     <li><a href="mailto:jamesgold.ksk@gmail.com"><i class="fas fa-envelope"></i></a></li>
                 </ul>
                 <ul class='navSecondul'>
-                    <li><a href="#chartPage">Skill</a></li>
-                    <li><a href="#webPages">Work</a></li>
-                    <li><a href="#summaryWheel">Contact</a></li>
+                    <li><a href="#moveFirstpoint">Skill</a></li>
+                    <li><a href="#moveSecondpoint">Work</a></li>
+                    <li><a href="#moveThirdpoint">Contact</a></li>
                     <li class="navClosebtn"><i class="fas fa-times"></i></li>
                 </ul>
                 <a href="#" class="togglebtn"><i class="fas fa-bars"></i></a>
@@ -77,7 +81,7 @@
         </header>
 
         <main>
-            <p id="mouseFollower">Click!</p>
+            <p id="mouseFollower"><i class="fas fa-spider"></i></p>
             <div id="landContainer">
                 <div class="row" id="landPage"> <!-- #landPag -->
                     <section class="col-6 col-lg-5"> <!--   1st   -->
@@ -184,6 +188,7 @@
             </div> <!-- #landContainer -->     
 
             <div class="row" id="chartPage"> <!-- #chartPage -->
+                <p class="movePoint" id="moveFirstpoint"></p>
                 <section class="col-lg-4 col-md-6">
                     <div><i class="fas fa-desktop"></i> &nbsp;Frontend</div>
                     <div><canvas id="chartOne"></canvas></div>
@@ -236,6 +241,7 @@
             </div>
 
             <div class="row" id="webPages"> <!-- #webPages -->
+                <p class="movePoint" id="moveSecondpoint"></p>
                 <section class="col-xl-10"><button>All</button><button>Frontend</button><button>Backend</button></section>
                 <section class="col-xl-4 col-md-6">
                     <div> <!-- frame -->
@@ -254,7 +260,7 @@
                                     <li>Responsive web layout</li>
                                     <li>Graphs of comprehension of skills</li>
                                     <li>Contact (EmailJS)</li>
-                                    <li>3D Design / Following text</li>
+                                    <li>3D Design / A following spider</li>
                                 </ul>                            
                             </h6>
                         </div>
@@ -393,7 +399,7 @@
 
           
             <div class="row" id="summaryWheel"> <!-- #summaryWheel -->
-            
+                <p class="movePoint" id="moveThirdpoint"></p>
                 <section class="col-lg-4 order-2 order-lg-1">
                     <div class='dial'><i class="fas fa-sort-up"></i><span>3D<br>OFF</span>
                     
@@ -449,7 +455,7 @@
                 <section class="col-xl-2 col-lg-4 col-md-6"><h5>6. Hard worker, responsibility, trilingual <span class="badge bg-secondary">Wow</span></h5> </section>
             </div>
 
-            <a href="#"><button class="gototop">Top</button></a>
+            <a href="#wrapper"><button class="gototop">Top</button></a>
 
         </main><!-- //content -->
 
@@ -489,20 +495,12 @@
         </footer>   
     </div>
 
-
     <div id="loading">
         <div id = "loading_image">
             <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
             <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status"></div>Loading...
         </div>
     </div>
-
-    <!-- <div id="loading"><img id="loading-image" src="./index_img/stencil.jpg" alt="Loading"/><div class="loading_text">Loading...</div></div> -->
-    <!-- <script type="text/javascript">window.onload = function(){
-        $('#loading').hide();
-    
-    }</script> -->
-
 </body>
 </html>
 

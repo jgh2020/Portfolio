@@ -5,6 +5,9 @@ $(function(){
     var scroll_Wheel = true;
     var scroll_3D = true;
     var ifNavfixed = true;
+    var firstMoveNotdone = true;
+
+    $(window).scrollTop(Math.ceil($('nav').offset().top));
 
     $('.togglebtn').click(function(){
         $('.navSecondul').toggleClass('active');
@@ -13,6 +16,27 @@ $(function(){
     $('.navClosebtn').click(function(){
         $('nav').css({'position':'absolute'});
         ifNavfixed = false;
+    });
+
+    $('a[href="#moveFirstpoint"]').click(function() {
+        if (firstMoveNotdone){
+            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveFirstpoint').offset().top)); }, 550);
+            firstMoveNotdone = false;
+        }
+    });
+
+    $('a[href="#moveSecondpoint"]').click(function() {
+        if (firstMoveNotdone){
+            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveSecondpoint').offset().top)); }, 550);
+            firstMoveNotdone = false;
+        }
+    });
+
+    $('a[href="#moveThirdpoint"]').click(function() {
+        if (firstMoveNotdone){
+            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveThirdpoint').offset().top)); }, 550);
+            firstMoveNotdone = false;
+        }
     });
 
     $(window).scroll(function() {
@@ -193,12 +217,11 @@ $(function(){
 
     // portfolio =================================================================================================
 
-
     function webPagesTurn() {
         $('#webPages section>div>div').css({'margin-top':'0'});
-        $('#webPages section:nth-child(2)>div>div').css({'margin-top':'-168px', 'backdrop-filter':'blur(10px)'});
-        $('#webPages section:nth-child(2)>div>div p').css({'color':'white'});
-        $('#webPages section:nth-child(2)>div i').addClass('showinfo');
+        $('#webPages section:nth-child(3)>div>div').css({'margin-top':'-168px', 'backdrop-filter':'blur(10px)'});
+        $('#webPages section:nth-child(3)>div>div p').css({'color':'white'});
+        $('#webPages section:nth-child(3)>div i').addClass('showinfo');
     }
    
 
@@ -321,16 +344,18 @@ $(function(){
 
     var follower = true;
 
-    $('.cube>div:nth-child(1)').mousemove(function(event){ 
+    $('.cube>div:nth-child(1), #mouseFollower').mousemove(function(event){ 
         if(follower){
-            var x_coordinate = event.pageX + 15;
-            var y_coordinate = event.pageY - 15; 
+            var x_coordinate = event.pageX - 10;
+            var y_coordinate = event.pageY + 75; 
             $('#mouseFollower').css({'visibility':'visible'});
             $('#mouseFollower').css({'left':''+x_coordinate+'px'}); 
             $('#mouseFollower').css({'top':''+y_coordinate+'px'}); 
+            $('.cube>div').css({'cursor':'help'});
         }
     }).mouseout(function(){ 
         $('#mouseFollower').css({'visibility':'collapse'});
+        $('#mouseFollower').css({'top':'50.5vh', 'left':'47.8vw', 'visibility':'collapse'});
     });
 
     var rotationDistance = 0;
@@ -339,13 +364,11 @@ $(function(){
         rotationDistance = -20;
     }else rotationDistance = -25;
 
-    $('.cube').css({'transform':'translateZ('+rotationDistance+'vw)'});
-
     var firstCubeface = 1;
     var secondCubeface = 1;
     var thirdCubeface = 1;
     var forthCubeface = 1;
-  
+
     $(window).resize(function() { 
         screenWidth = $(window).width();
         if(screenWidth >=992) {
@@ -363,8 +386,10 @@ $(function(){
         var Index = $('.cube>div').index(this);
         var rotationIndex = (Index+1)%4;
 
+        $('#mouseFollower').css({'top':'50.5vh', 'left':'50vw', 'visibility':'collapse'});
         $(this).closest('.cube').css({'transform':'translateZ('+rotationDistance+'vw) rotateY('+((-90)*rotationIndex)+'deg)'});
-        $('#mouseFollower').css({'visibility':'collapse'});
+        
+        $('.cube>div').css({'cursor':'pointer'});
         follower = false;
 
         if (Index < 4){ 

@@ -15,7 +15,7 @@
                 <div id="menuItems">
                     <ul>
 						<form name="search" id="search" method="post" action="searchWord.php">
-							<li><a href="#">Main</a></li>
+							<li><a href="english.php">Main</a></li>
 							<li><a href="word_list.php">Vocabulary</a></li>
 							<li><a href="hangman.php">Games</a></li>
 							<li><a href="../index.html">Portfolio</a></li>

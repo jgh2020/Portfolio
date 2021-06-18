@@ -1,36 +1,36 @@
- #loading {
-    width: 100%;   
-    height: 100%;   
-    top: 0px;
-    left: 0px;
-    position: fixed;   
-    display: block; 
-    background-color: white;
-    z-index: 99; 
+#loading {
+  width: 100%;   
+  height: 100%;   
+  top: 0px;
+  left: 0px;
+  position: fixed;   
+  display: block; 
+  background-color: white;
+  z-index: 99; 
 }  
 
 #loading_image {   
-    position: absolute;
-    top: 50%;   
-    left:50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 100; 
+  position: absolute;
+  top: 50%;   
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100; 
 }
 
 :root{
-    --text-black: rgb(70, 75, 80);
-    --text-white: rgba(255, 255, 255, 0.8);
+  --text-black: rgb(70, 75, 80);
+  --text-white: rgba(255, 255, 255, 0.8);
 }
 
 *{
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
 }
 
 a{
- color:white;
- text-decoration: none;
+  color:white;
+  text-decoration: none;
 }
 
 a:hover{
@@ -43,13 +43,22 @@ a:hover{
 
 #mouseFollower{
   position: absolute;
-  top:0px;
-  left:0px;
+  top:50.5vh;
+  left:50vw;
   font-size: 25px;
   color:orange;
   z-index:20;
   visibility: collapse;
+  text-align: center;
+  transition: all 0.5s;
+  transform-origin: 50% -200%;
+  animation:swing 0.8s ease-in-out Infinite Alternate; 
 }
+
+@keyframes swing {
+    0% { transform: rotate(30deg); }
+    to { transform: rotate(-30deg); } 
+  }
 
 nav{
   position: fixed;
@@ -89,7 +98,7 @@ nav>ul li{
 }
 
 nav>ul li:hover{
-  transform: scale(1.2);
+  transform: scale(1.3);
   cursor: pointer;
 }
 
@@ -113,6 +122,12 @@ nav>ul li:hover{
   background-color: black;
   border-radius: 10px;
   padding:5px 10px;
+}
+
+.movePoint{
+  position:relative;
+  top:-20vh;
+  margin:0;
 }
 
 /* landPage ==================================== */
@@ -161,12 +176,14 @@ nav>ul li:hover{
   height:100%;
   transition: all 0.5s ease-in-out;
   backface-visibility:hidden;
-  
+}
+
+.cube>div:hover{ 
+  cursor:pointer;
 }
 
 .cube>div:hover img{ 
   filter:brightness(0.6);
-  cursor:pointer;
 }
 
 .cube img{
@@ -285,7 +302,7 @@ nav>ul li:hover{
   display: flex;
   justify-content: center;
   background-color: rgb(248, 249, 250);
-  padding: 200px 20px;
+  padding: 170px 20px 200px 20px;
   color:var(--text-black);
   text-align: center;
 }
@@ -426,7 +443,7 @@ transform: scale(1.8);
 #webPages section>div>div{
   padding:0;
   margin-top:-168px;  
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
 
 #webPages section>div>div img{
@@ -496,24 +513,24 @@ transform: scale(1.8);
   padding: 200px 50px 40px 50px;
 }
 
-#summaryWheel section:nth-child(1){
-   padding:100px 0;
-   margin-top:40px;
+#summaryWheel section:nth-child(2){
+  padding:100px 0;
+  margin-top:40px;
 }
 
-#summaryWheel section:nth-child(2){
+#summaryWheel section:nth-child(3){
   padding:20px 40px 50px 40px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(200, 200, 200);
   color:var(--text-black);
 }
 
-#summaryWheel section:nth-child(2) a{
+#summaryWheel section:nth-child(3) a{
   color:rgb(13, 110, 253);
   text-decoration:underline;
 }
 
-#summaryWheel section:nth-child(2) h6{
+#summaryWheel section:nth-child(3) h6{
   font-style: italic;
 }
 
@@ -547,7 +564,7 @@ transform: scale(1.8);
   height:170px;
   border-radius: 100%;
   background-color: white;
-   text-align: center;
+  text-align: center;
   border:1px solid lightgray;
 }
 
@@ -667,6 +684,13 @@ footer .row p{
   color:rgba(255, 255, 255, 0.5);
   text-align: center;
 }  
+
+@media screen and (max-width:1580px){
+
+  .movePoint{
+    top:-11vh;
+}
+}
 
 @media screen and (max-width:991px){
 
