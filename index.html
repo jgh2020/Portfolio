@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"">
     <link href="./index_css/style.css" rel="stylesheet" type="text/css">
     <title>Kim's Portfolio</title>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
@@ -25,9 +24,7 @@
 
     <script type="text/javascript">
         window.onload = function() {
-
             $('#loading').hide(); // loading ======================================================
-            $(window).scrollTop(0);
             if($(window).width() >=992) {
                 $('.cube').css({'transform':'translateZ(-20vw)'});
             }else $('.cube').css({'transform':'translateZ(-25vw)'});
@@ -71,9 +68,9 @@
                     <li><a href="mailto:jamesgold.ksk@gmail.com"><i class="fas fa-envelope"></i></a></li>
                 </ul>
                 <ul class='navSecondul'>
-                    <li><a href="#moveFirstpoint">Skill</a></li>
-                    <li><a href="#moveSecondpoint">Work</a></li>
-                    <li><a href="#moveThirdpoint">Contact</a></li>
+                    <li class="moveTochart">Skill</li>
+                    <li class="moveToweb">Work</li>
+                    <li class="moveTowheel">Contact</li>
                     <li class="navClosebtn"><i class="fas fa-times"></i></li>
                 </ul>
                 <a href="#" class="togglebtn"><i class="fas fa-bars"></i></a>
@@ -95,8 +92,6 @@
                         
                         </div>
                     </section>
-
-                    
                     <section class="col-6 col-lg-5"> <!--   2nd   -->
                         <div>
                             <div class = 'cube'> <!--   cube   -->
@@ -156,21 +151,21 @@
                                 </div>
                                 <div class = 'right'><img src="./index_img/cobweb4.jpg" alt="second">
                                     <span>
-                                        <h2>Spider. <i class="fas fa-spider"></i></h2>
+                                        <h2>Spider. <i class="fas fa-spider"></i><div>If you find me again, <br>just click around me.</div></h2>
                                         <h5>My webs are flawless as it's my way to make a living.</h5>
                                     <span>
                                 </div>
                                 <div class = 'back'><img src="./index_img/bulb4.jpg" alt="third">
                                     <span>
                                         <h2>James.
-                                            <a id='resume' href='./todolist/todolist.html'>More about me</a>
+                                            <a id='resume' href='./resume/password.php'>More about me</a>
                                         </h2>
                                         <h5>I like creating dynamic webs as they are more exciting.</h5>
                                     <span>
                                 </div>
                                 <div class = 'left'><img src="./index_img/cobweb4.jpg" alt="forth">
                                     <span>
-                                        <h2>Spider. <i class="fas fa-spider"></i></h2>
+                                        <h2>Spider. <i class="fas fa-spider"></i><div>If you find me again, <br>just click around me.</div></h2>
                                         <h5>My webs are flawless as it's my way to make a living.</h5>
                                     <span>
                                 </div>
@@ -186,11 +181,10 @@
                     </section> 
                 </div> <!-- #landPage -->   
             </div> <!-- #landContainer -->     
-
             <div class="row" id="chartPage"> <!-- #chartPage -->
                 <p class="movePoint" id="moveFirstpoint"></p>
                 <section class="col-lg-4 col-md-6">
-                    <div><i class="fas fa-desktop"></i> &nbsp;Frontend</div>
+                    <div id="frontskill"><i class="fas fa-desktop"></i> &nbsp;Frontend <i id="chartSpider" class="fas fa-spider"></i></div>
                     <div><canvas id="chartOne"></canvas></div>
                     <p>Willingness to learn new skills : 200% 👍<br>
                         <span>I enjoy learning new programming languages. 
@@ -199,7 +193,7 @@
                     </p>
                 </section >
                 <section class="col-lg-4 col-md-6">
-                    <div><i class="fas fa-server"></i> &nbsp;Backend</div>
+                    <div id="backskill"><i class="fas fa-server"></i> &nbsp;Backend</div>
                     <div><canvas id="chartTwo"></canvas></div>
                     <p>Ability to learn new skills : 200% 👍<br>
                         <span>I learn new programming languages quickly. 
@@ -210,7 +204,7 @@
                 </section>
 
                 <section class="col-lg-4 col-md-6">
-                    <div><i class="fas fa-plus-circle"></i> &nbsp;Plus</div>
+                    <div id="plusskill"><i class="fas fa-plus-circle"></i> &nbsp;Plus</div>
                     <div>
                         <div><canvas id="chartThree_first"></canvas></div>
                         <div><canvas id="chartThree_second"></canvas></div>
@@ -221,28 +215,28 @@
 
                 <section class="col-lg-12 col-md-6">
                     <div>
-                        <p><img src="./index_img/html5.png" alt="html5"><span>HTML5<br>100%</span></p>
-                        <p><img src="./index_img/css3.png" alt="css3"><span>CSS3<br>100%</span> </p>
-                        <p><img src="./index_img/js.png" alt="js"><span>JavaScript<br>90%</span> </p>
-                        <p><img src="./index_img/jquery.png" alt="jquery"><span>jQuery<br>90%</span> </p>
-                        <p><img src="./index_img/react.png" alt="react"><span>React<br>80%</span> </p>
-                        <p><img src="./index_img/bootstrap.png" alt="bootstrap"><span>Bootstrap<br>85%</span> </p>
-                        <p><img src="./index_img/php.png" alt="php"><span>PHP<br>90%</span></p>
-                        <p><img src="./index_img/java.png" alt="java"><span>Java<br>90%</span> </p>
-                        <p><img src="./index_img/python.png" alt="python"><span>Python<br>85%</span> </p>
-                        <p><img src="./index_img/db.png" alt="db"><span>Data Base<br>95%</span> </p>
-                        <p><img src="./index_img/rest.jpg" alt="restapi"><span>REST API<br>80%</span> </p>
-                        <p><img src="./index_img/json.jpg" alt="json"><span>JSON<br>80%</span> </p>
-                        <p><img src="./index_img/android.png" alt="android"><span>Android<br>85%</span> </p>
-                        <p><img src="./index_img/linux.png" alt="linux"><span>Linux<br>85%</span> </p>
-                        <p><img src="./index_img/github.png" alt="github"><span>GitHub<br>80%</span> </p>
-                        <p><img src="./index_img/wordpress.png" alt="wordpress"><span>Wordpress<br>80%</span> </p>
+                        <p class="frontImg"><img src="./index_img/html5.png" alt="html5"><span>HTML5<br>100%</span></p>
+                        <p class="frontImg"><img src="./index_img/css3.png" alt="css3"><span>CSS3<br>100%</span> </p>
+                        <p class="frontImg"><img src="./index_img/js.png" alt="js"><span>JavaScript<br>90%</span> </p>
+                        <p class="frontImg"><img src="./index_img/jquery.png" alt="jquery"><span>jQuery<br>90%</span> </p>
+                        <p class="frontImg"><img src="./index_img/react.png" alt="react"><span>React<br>80%</span> </p>
+                        <p class="frontImg"><img src="./index_img/bootstrap.png" alt="bootstrap"><span>Bootstrap<br>85%</span> </p>
+                        <p class="backImg"><img src="./index_img/php.png" alt="php"><span>PHP<br>90%</span></p>
+                        <p class="backImg"><img src="./index_img/java.png" alt="java"><span>Java<br>90%</span> </p>
+                        <p class="backImg"><img src="./index_img/python.png" alt="python"><span>Python<br>85%</span> </p>
+                        <p class="backImg"><img src="./index_img/db.png" alt="db"><span>Data Base<br>95%</span> </p>
+                        <p class="backImg"><img src="./index_img/rest.jpg" alt="restapi"><span>REST API<br>80%</span> </p>
+                        <p class="backImg"><img src="./index_img/json.jpg" alt="json"><span>JSON<br>80%</span> </p>
+                        <p class="plusImg"><img src="./index_img/android.png" alt="android"><span>Android<br>85%</span> </p>
+                        <p class="plusImg"><img src="./index_img/linux.png" alt="linux"><span>Linux<br>85%</span> </p>
+                        <p class="plusImg"><img src="./index_img/github.png" alt="github"><span>GitHub<br>80%</span> </p>
+                        <p class="plusImg"><img src="./index_img/wordpress.png" alt="wordpress"><span>Wordpress<br>80%</span> </p>
                     </div>
             </div>
 
             <div class="row" id="webPages"> <!-- #webPages -->
                 <p class="movePoint" id="moveSecondpoint"></p>
-                <section class="col-xl-10"><button>All</button><button>Frontend</button><button>Backend</button></section>
+                <section class="col-xl-10"><button>All</button><button>Frontend</button><button>Backend</button><i id="webSpider1" class="fas fa-spider"></i></section>
                 <section class="col-xl-4 col-md-6">
                     <div> <!-- frame -->
                         <div>
@@ -264,7 +258,8 @@
                                 </ul>                            
                             </h6>
                         </div>
-                        <i class="fas fa-info-circle"></i> 
+                        <i class="fas fa-info-circle"></i>
+                        <i id="webSpider2" class="fas fa-spider"></i>
                     </div>    
                 </section>
                 
@@ -366,7 +361,6 @@
                         <i class="fas fa-info-circle"></i>
                     </div>        
                 </section>
-                
                 <section class="col-xl-4 col-md-6">
                     <div class="plan">
                         <div>
@@ -396,12 +390,10 @@
                         You will see continued development of my productions over time.</p>
                 </section>
             </div>
-
-          
             <div class="row" id="summaryWheel"> <!-- #summaryWheel -->
                 <p class="movePoint" id="moveThirdpoint"></p>
                 <section class="col-lg-4 order-2 order-lg-1">
-                    <div class='dial'><i class="fas fa-sort-up"></i><span>3D<br>OFF</span>
+                    <div class='dial'><i class="fas fa-sort-up"></i><span>3D<br>OFF</span><i id="wheelSpider" class="fas fa-spider"></i>
                     
                             <button class='cards'>All</button>
                             <button class='cards'>1</button>
@@ -455,7 +447,7 @@
                 <section class="col-xl-2 col-lg-4 col-md-6"><h5>6. Hard worker, responsibility, trilingual <span class="badge bg-secondary">Wow</span></h5> </section>
             </div>
 
-            <a href="#wrapper"><button class="gototop">Top</button></a>
+            <button class="gototop">Top</button>
 
         </main><!-- //content -->
 
@@ -463,10 +455,10 @@
             <div class="row"> <!-- footer .row: -->
                     <section class="col-lg-3 col-md-6">
                         <ul>
-                            <li><a href="#">Main</a></li>
-                            <li><a href="#chartPage">Skill</a></li>
-                            <li><a href="#webPages">Work</a></li>
-                            <li><a href="#summaryWheel">Contact</a></li>
+                            <li class="moveTotop">Main</li>
+                            <li class="moveTochart">Skill</li>
+                            <li class="moveToweb">Work</li>
+                            <li class="moveTowheel">Contact</li>
                         </ul>
                     </section>
                     <section class="col-lg-3 col-md-6">
@@ -482,14 +474,17 @@
                             <li><a href="./resume/password.php">Resume</a></li>
                             <li><a href="./resume/password.php">Cover letter</a></li>
                             <li><a href="mailto:jamesgold.ksk@gmail.com">Email</a></li>
+                            <li><a href="https://www.algonquincollege.com/sat/program/computer-programming/" target='_blank'>Algonquin</a></li>
                         </ul>
                     </section>
                     <section class="col-lg-3 col-md-6">
                         <ul>
                             <li><a href='https://www.linkedin.com/in/james-kim-a846a1211?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6q9akq3fQTORU6bKCz8FYg%3D%3D' target='_blank'>Linkedin</a></li>
                             <li><a href='https://github.com/jgh2020' target='_blank'>Guthub</a></li>
+                            <i class="fas fa-spider"></i>
                         </ul>
                     </section>
+                    <div class="spiderWeb"><span>Some<br>developer</span><img src="./index_img/cutespider.png" alt="spiderWeb"></div>
                     <p>Thank you for visiting my portfolio. Have a great day! &copy; 2021 Seungkyun Kim. All Rights Reserved.</p>
             </div>
         </footer>   

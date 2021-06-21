@@ -1,13 +1,10 @@
 $(function(){
 
-    var scroll_Chart = true;
-    var scroll_Webpage = true;
-    var scroll_Wheel = true;
-    var scroll_3D = true;
-    var ifNavfixed = true;
-    var firstMoveNotdone = true;
-
-    $(window).scrollTop(Math.ceil($('nav').offset().top));
+    var Is_Chart_closed = true;
+    var Is_Web_closed = true;
+    var Is_Wheel_closed = true;
+    var Is_3D_closed = true;
+    var Is_Nav_fixed = true;
 
     $('.togglebtn').click(function(){
         $('.navSecondul').toggleClass('active');
@@ -15,28 +12,25 @@ $(function(){
 
     $('.navClosebtn').click(function(){
         $('nav').css({'position':'absolute'});
-        ifNavfixed = false;
+        Is_Nav_fixed = false;
     });
 
-    $('a[href="#moveFirstpoint"]').click(function() {
-        if (firstMoveNotdone){
-            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveFirstpoint').offset().top)); }, 550);
-            firstMoveNotdone = false;
-        }
+    $('.moveTotop, .gototop').click(function() {
+        $(window).scrollTop(0);
     });
 
-    $('a[href="#moveSecondpoint"]').click(function() {
-        if (firstMoveNotdone){
-            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveSecondpoint').offset().top)); }, 550);
-            firstMoveNotdone = false;
-        }
+    $('.moveTochart').click(function() {
+        $(window).scrollTop(Math.ceil($('#moveFirstpoint').offset().top));
     });
 
-    $('a[href="#moveThirdpoint"]').click(function() {
-        if (firstMoveNotdone){
-            setTimeout(function(){ $(window).scrollTop(Math.ceil($('#moveThirdpoint').offset().top)); }, 550);
-            firstMoveNotdone = false;
-        }
+    $('.moveToweb').click(function() {
+        if (Is_Chart_closed){ showGraph(); }
+        $(window).scrollTop(Math.ceil($('#moveSecondpoint').offset().top));
+    });
+
+    $('.moveTowheel').click(function() {
+        if (Is_Chart_closed){ showGraph(); }
+        $(window).scrollTop(Math.ceil($('#moveThirdpoint').offset().top));
     });
 
     $(window).scroll(function() {
@@ -47,9 +41,9 @@ $(function(){
         }else{
             $('nav>ul li, .togglebtn').css({'background-color':'black'});
             $('.navClosebtn').css({'display':'none'});
-            if (!ifNavfixed){ 
+            if (!Is_Nav_fixed){ 
                 $('nav').css({'position':'fixed'});
-                ifNavfixed =true;
+                Is_Nav_fixed =true;
             }
         }
 
@@ -76,9 +70,9 @@ $(function(){
         }
 
         if ($(this).scrollTop() >= Math.ceil($('#webPages').offset().top)-300) {
-            if (scroll_Webpage){
+            if (Is_Web_closed){
                 webPagesTurn();
-                scroll_Webpage = false;
+                Is_Web_closed = false;
             }           
         }
 
@@ -92,13 +86,13 @@ $(function(){
         });
 
         if ($(this).scrollTop() >= Math.ceil($('#summaryWheel').offset().top)-80) {
-            if (scroll_Wheel){
+            if (Is_Wheel_closed){
                 summaryWheel();
-                scroll_Wheel = false;
+                Is_Wheel_closed = false;
             }
-            if (scroll_3D){
+            if (Is_3D_closed){
                 rotation3d();
-                scroll_3D = false;
+                Is_3D_closed = false;
             }
         }
     });
@@ -107,115 +101,139 @@ $(function(){
 
     $(window).on('scroll', function(){
         if ($(this).scrollTop() >= Math.ceil($('#chartPage').offset().top)-300) {
-            if (scroll_Chart){
+            if (Is_Chart_closed){
                 showGraph();
-                scroll_Chart = false;
             }
         }  
     });    
 
-        function showGraph() {
-            let chartOne = document.getElementById('chartOne').getContext('2d');
-            let barChart = new Chart(chartOne, {
-                type : 'bar', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'React JS', 'Bootstrap'],
-                    datasets :[{
-                        label : 'Comprehension of frontend languages (%)',
-                        data : [100, 100, 90, 90, 80, 85],
-                        backgroundColor:['lightskyblue'],
-                        borderWidth:1,
-                        borderColor:'white',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-    
-            let chartTwo = document.getElementById('chartTwo').getContext('2d');
-            let lineChart = new Chart(chartTwo, {
-                type : 'line', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['PHP', 'Java', 'Python', 'Data Base', 'REST API', 'JSON'],
-                    datasets :[{
-                        label : 'Comprehension of backend languages (%)',
-                        data : [90, 90, 85, 95, 80, 80],
-                        backgroundColor:['royalblue'],
-                        borderWidth:1,
-                        borderColor:'black',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-    
-            let chartThree_first = document.getElementById('chartThree_first').getContext('2d');
-            let doughnutChart1 = new Chart(chartThree_first, {
-                type : 'doughnut', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['Android: 85%'],
-                    datasets :[{
-                        data : [85, 15],
-                        backgroundColor:['green','white'],
-                        borderWidth:1,
-                        borderColor:'white',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-    
-            let chartThree_second = document.getElementById('chartThree_second').getContext('2d');
-            let doughnutChart2 = new Chart(chartThree_second, {
-                type : 'doughnut', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['Linux: 85%'],
-                    datasets :[{
-                        data : [85, 15],
-                        backgroundColor:['yellowgreen','white'],
-                        borderWidth:1,
-                        borderColor:'white',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-    
-            let chartThree_third = document.getElementById('chartThree_third').getContext('2d');
-            let doughnutChart3 = new Chart(chartThree_third, {
-                type : 'doughnut', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['GitHub: 80%'],
-                    datasets :[{
-                        data : [80, 20],
-                        backgroundColor:['yellowgreen','white'],
-                        borderWidth:1,
-                        borderColor:'white',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-    
-            let chartThree_forth = document.getElementById('chartThree_forth').getContext('2d');
-            let doughnutChart4 = new Chart(chartThree_forth, {
-                type : 'doughnut', //pie, line, doughnut, polarArea
-                data : {
-                    labels : ['Wordpress: 80%'],
-                    datasets :[{
-                        data : [80, 20],
-                        backgroundColor:['green','white'],
-                        borderWidth:1,
-                        borderColor:'white',
-                        hoverBorderWidth:2,
-                        borderRadius:5
-                    }]
-                }
-            });
-        }
-    
+    function showGraph() {
+        let chartOne = document.getElementById('chartOne').getContext('2d');
+        let barChart = new Chart(chartOne, {
+            type : 'bar', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'React JS', 'Bootstrap'],
+                datasets :[{
+                    label : 'Comprehension of frontend languages (%)',
+                    data : [100, 100, 90, 90, 80, 85],
+                    backgroundColor:['lightskyblue'],
+                    borderWidth:1,
+                    borderColor:'white',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
 
-    // portfolio =================================================================================================
+        let chartTwo = document.getElementById('chartTwo').getContext('2d');
+        let lineChart = new Chart(chartTwo, {
+            type : 'line', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['PHP', 'Java', 'Python', 'Data Base', 'REST API', 'JSON'],
+                datasets :[{
+                    label : 'Comprehension of backend languages (%)',
+                    data : [90, 90, 85, 95, 80, 80],
+                    backgroundColor:['royalblue'],
+                    borderWidth:1,
+                    borderColor:'black',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
+
+        let chartThree_first = document.getElementById('chartThree_first').getContext('2d');
+        let doughnutChart1 = new Chart(chartThree_first, {
+            type : 'doughnut', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['Android: 85%'],
+                datasets :[{
+                    data : [85, 15],
+                    backgroundColor:['green','white'],
+                    borderWidth:1,
+                    borderColor:'white',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
+
+        let chartThree_second = document.getElementById('chartThree_second').getContext('2d');
+        let doughnutChart2 = new Chart(chartThree_second, {
+            type : 'doughnut', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['Linux: 85%'],
+                datasets :[{
+                    data : [85, 15],
+                    backgroundColor:['yellowgreen','white'],
+                    borderWidth:1,
+                    borderColor:'white',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
+
+        let chartThree_third = document.getElementById('chartThree_third').getContext('2d');
+        let doughnutChart3 = new Chart(chartThree_third, {
+            type : 'doughnut', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['GitHub: 80%'],
+                datasets :[{
+                    data : [80, 20],
+                    backgroundColor:['yellowgreen','white'],
+                    borderWidth:1,
+                    borderColor:'white',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
+
+        let chartThree_forth = document.getElementById('chartThree_forth').getContext('2d');
+        let doughnutChart4 = new Chart(chartThree_forth, {
+            type : 'doughnut', //pie, line, doughnut, polarArea
+            data : {
+                labels : ['Wordpress: 80%'],
+                datasets :[{
+                    data : [80, 20],
+                    backgroundColor:['green','white'],
+                    borderWidth:1,
+                    borderColor:'white',
+                    hoverBorderWidth:2,
+                    borderRadius:5
+                }]
+            }
+        });
+        Is_Chart_closed = false;
+    }
+
+    $('#frontskill, #backskill, #plusskill').click(function(){
+        var indexnum = $('#chartPage section div').index(this);
+        var jumpingImg = null;
+        if (indexnum == 0){ jumpingImg = $('.frontImg'); }
+        else if (indexnum == 2) { jumpingImg = $('.backImg'); }
+        else if (indexnum == 4) { jumpingImg = $('.plusImg'); }
+
+        $('#chartSpider').css({'top':'-200px', 'animation':'none','visibility':'collapse' });
+        $(this).stop().animate({'margin-top':'-30px', 'margin-bottom':'60px'}, 400, function(){
+            $(this).stop().animate({'margin-top':'15px', 'margin-bottom':'15px'}, 300, 'easeOutBounce');
+            setTimeout(() => {
+                for(var i=0; i<6; i++){
+                    jumpingImg.eq(i).stop().animate({'margin-top':'-'+((i+1)%3*20+70)+'px' }, 250, 'easeOutCubic', function(){
+                    $(this).stop().animate({'margin-top':'12px'}, 400, 'easeOutBounce')});
+                    jumpingImg.children('img').css({'transform':'scale(1.8)'});
+                    jumpingImg.children('span').css({'visibility':'visible'});
+                }
+            }, 150);
+        });
+        setTimeout(() => {
+            jumpingImg.children('img').css({'transform':'scale(1)'});
+            jumpingImg.children('span').css({'visibility':'hidden'});
+        }, 2500);
+    });
+
+    // webpages =================================================================================================
 
     function webPagesTurn() {
         $('#webPages section>div>div').css({'margin-top':'0'});
@@ -223,7 +241,6 @@ $(function(){
         $('#webPages section:nth-child(3)>div>div p').css({'color':'white'});
         $('#webPages section:nth-child(3)>div i').addClass('showinfo');
     }
-   
 
     $('#webPages section button').click(function(){
         var num = $('#webPages section button').index(this);
@@ -236,6 +253,8 @@ $(function(){
             $('#webPages section>div').css({'visibility':'hidden','max-height':'0'});
             $('#webPages .backend').css({'visibility':'visible','max-height':'1000px'});
         }
+
+        $('#webSpider1').css({'top':'132px','visibility':'collapse', 'animation':'none' });
     });
 
     $('#webPages section>div i').click(function(){
@@ -243,19 +262,23 @@ $(function(){
 
         if ($(this).hasClass('showinfo')){
             $(this).siblings('div').css({'margin-top':'-168px'});
+            // $(this).siblings('div').stop().animate({'margin-top':'-168px'}, 5000, 'easeOutBounce');
             $(this).siblings('div').css({'backdrop-filter':'blur(10px)'});
             $(this).siblings('div').children('p').css({'color':'white'});
 
         }else {
             $(this).siblings('div').css({'margin-top':'0px'});
+            // $(this).siblings('div').stop().animate({'margin-top':'0'}, 5000, 'easeOutBounce');
             $(this).siblings('div').css({'backdrop-filter':'none'});
             $(this).siblings('div').children('p').css({'color':'rgba(255, 255, 255, 0.6)'});
         }
+        $('#webSpider2').css({'right':'-50px','visibility':'collapse', 'animation':'none' });
+        $('#webPages section:nth-child(3)>div i:nth-child(2)').css({'animation':'none'});
+        $('#webPages section:nth-child(3)>div i:nth-child(2)').css({'transform':'scale(1)'});
     });
 
     // summary =================================================================================================
-   
-   
+    
     function summaryWheel() {
         for(var i = 0; i<12; i++){
             $('.cards').eq(i).css({'transform':'translateX(-50%) rotate('+(i*30)+'deg)'});
@@ -278,17 +301,18 @@ $(function(){
             $('#summaryCards h5').eq(0).css({'color':'rgba(255, 255, 255, 0.9)'});
             $(this).text('3D').append('<br>ON');
         }else {
-
             $(this).css({'transform':'translateX(-50%) translateY(-50%) perspective(100px) rotateY(-30deg)'});
-
             $('#summaryCards').css({'transform':'translate(0)','padding':'0 50px 100px 50px'});
             $('#summaryCards h5').css({'transform':'translate(0)', 'background-color':'white'});
             $('#summaryCards h5').eq(0).css({'color':'rgb(33, 37, 41)'}); 
             $(this).text('3D').append('<br>OFF');
         }
+        $('#wheelSpider').css({'left':'-400px', 'visibility':'collapse', 'animation':'none' });
     });
 
     $('.cards').click(function(){
+
+        $('#wheelSpider').css({'left':'-400px', 'visibility':'collapse', 'animation':'none' });
 
         var textOne   = "1. Algonquin college computer programming ";
         var textTwo   = "2. Three (+2) great webpages from scratch ";
@@ -355,7 +379,7 @@ $(function(){
         }
     }).mouseout(function(){ 
         $('#mouseFollower').css({'visibility':'collapse'});
-        $('#mouseFollower').css({'top':'50.5vh', 'left':'47.8vw', 'visibility':'collapse'});
+        $('#mouseFollower').css({'top':'50vh', 'left':'53vw', 'visibility':'collapse'});
     });
 
     var rotationDistance = 0;
@@ -386,7 +410,7 @@ $(function(){
         var Index = $('.cube>div').index(this);
         var rotationIndex = (Index+1)%4;
 
-        $('#mouseFollower').css({'top':'50.5vh', 'left':'50vw', 'visibility':'collapse'});
+        $('#mouseFollower').css({'top':'50vh', 'left':'53vw', 'visibility':'collapse'});
         $(this).closest('.cube').css({'transform':'translateZ('+rotationDistance+'vw) rotateY('+((-90)*rotationIndex)+'deg)'});
         
         $('.cube>div').css({'cursor':'pointer'});

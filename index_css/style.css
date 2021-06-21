@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 #loading {
   width: 100%;   
   height: 100%;   
@@ -43,9 +46,9 @@ a:hover{
 
 #mouseFollower{
   position: absolute;
-  top:50.5vh;
-  left:50vw;
-  font-size: 25px;
+  top:50vh;
+  left:53vw;
+  font-size: 22px;
   color:orange;
   z-index:20;
   visibility: collapse;
@@ -68,11 +71,11 @@ nav{
   justify-content: space-between;
   transition: transform 1.5s;
   z-index:10;
-  
 }
 
 .navColor1{
-  background-color: lightskyblue;
+  background-color: rgb(65, 87, 254);
+
 }
 
 .navColor2{
@@ -95,6 +98,7 @@ nav>ul li{
   transition: transform 0.5s ease;
   background-color: black;
   border-radius: 10px;
+  color:white;
 }
 
 nav>ul li:hover{
@@ -201,11 +205,10 @@ nav>ul li:hover{
   position:absolute;
   color:rgb(245, 245, 245);
   padding:0 5px;
-  font-family:cursive;
 }
 
 .cube>div span h1{
-  font-family: cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
 }
 
@@ -271,7 +274,6 @@ nav>ul li:hover{
 }
 
 #landPage section:nth-child(5) span{
-  
   font-size:16px;
 }
 
@@ -297,6 +299,21 @@ nav>ul li:hover{
   color:orange;
 }
 
+#landPage section .cube>div span h2 div{
+  position: relative;
+  font-size: 10px;
+  display: inline-block;
+  padding-left:8px;
+  color:rgb(115, 115, 115);
+  transition: all 0.5s;
+}
+
+#landPage section .cube>div span h2:hover div{
+  transform:scale(1.2);
+  color:white;
+  padding-left:13px;
+}
+
 /* chartPage =================================================== */
 #chartPage{
   display: flex;
@@ -318,13 +335,33 @@ nav>ul li:hover{
   flex-wrap: wrap;
 }
 
-#chartPage section div:nth-child(1){
+#frontskill, #backskill, #plusskill{
+  position:relative;
+  overflow: hidden;
   font-size: 20px;
 }
 
-#chartPage section i{
-  color:lightgray;
+#frontskill:hover, #backskill:hover, #plusskill:hover{
+  cursor:pointer;
+  background-color: rgb(230, 255, 255);
+}
+
+#chartPage section div i:first-child{
+  color:rgb(65, 87, 254);
   padding-top:4px;
+  transition:all 0.5s;;
+}
+
+#chartSpider{
+  position:absolute;
+  right:40px;
+  top:-120px;
+  height:155px;
+  transform: rotate(180deg);
+  color:rgba(75, 0, 130, 0.8);
+  text-shadow: -1px -10px 4px lightgray;
+  animation:updown 1.8s ease-in-out Infinite Alternate; 
+  transition: all 1s;
 }
 
 #chartPage p{
@@ -360,16 +397,17 @@ nav>ul li:hover{
 }
 
 #chartPage section:last-child img{
-  transition: all 0.5s ;
+  transition: transform 0.2s ;
   width: 100%;
-  height: 100%;;
+  height: 100%;
 }
+
 #chartPage section:last-child img:hover{
-transform: scale(1.8);
+transform: scale(1.8)!important;
 }
 
 #chartPage section:last-child img:hover +span{
-  visibility: visible;
+  visibility: visible!important;
   }
 
 #chartPage section:last-child p span{
@@ -412,6 +450,7 @@ transform: scale(1.8);
   position: relative;
   display: flex;
   justify-content: center;
+  /* border:1px solid white; */
 }
 
 #webPages section button {
@@ -422,6 +461,18 @@ transform: scale(1.8);
   color:var(--text-white);
   font-size: 18px;;
 }
+
+#webPages section:nth-child(2) i {
+  color: orange;
+  font-size: 18px;
+  position:absolute;
+  top:32px;
+  margin-left:52px;
+  transition:all 1s;
+  transform-origin: 50% -300%;
+  animation:swing 1.5s ease-in-out Infinite Alternate; 
+}
+
 
 #webPages section button:hover {
   color:white;
@@ -495,7 +546,33 @@ transform: scale(1.8);
   color:rgba(255, 255, 255, 0.6);
 }
 
-#webPages section>div i:hover{
+#webPages section>div i:nth-child(3){
+  color:orange;
+  right:-7px;
+  bottom:15px;
+  transition: all 1s;
+  animation:rolling 0.5s Infinite Alternate; 
+}
+
+@keyframes rolling {
+  0% { transform: skew(8deg) ; }
+  to { transform: skew(-8deg) ; } 
+}
+
+#webPages section:nth-child(3)>div i:nth-child(2){
+  animation:rotation_i 3.8s linear infinite;
+  z-index:10;
+  transform: scale(1.8);
+  transition: transform 1s;
+}
+
+@keyframes rotation_i {
+  100% {
+    transform: scale(1.8) rotate(360deg);
+  }
+}
+
+#webPages section>div i:nth-child(2):hover{
   color:rgb(255, 255, 255);
   cursor: pointer;
 }
@@ -506,7 +583,6 @@ transform: scale(1.8);
   font-size:13px;
   font-style: italic;
 }
-
 
 /* summaryWheel 1st ==================================== */
 #summaryWheel{
@@ -594,6 +670,25 @@ transform: scale(1.8);
   color: silver;
 }
 
+#summaryWheel i:nth-child(3){
+  position:absolute;
+  left:25px;
+  top:100px;
+  transform-origin: 50% -400%;
+  transform: perspective(200px);
+  color:rgba(75, 0, 130, 0.8);
+  animation:backandforth 1.8s ease-in-out Infinite Alternate; 
+  transition: all 2s;
+}
+
+@keyframes backandforth {
+  0% { transform: perspective(200px) rotateX(-15deg); 
+       text-shadow: 0px 35px 10px gray; }
+  50% {text-shadow: 0px 20px 6px gray; }
+  to { transform: perspective(200px) rotateX(45deg);
+       text-shadow: 0px 35px 20px white;}
+}
+
 .form-group{
   padding:10px 0;
 }
@@ -648,19 +743,43 @@ transform: scale(1.8);
 }
 
 footer .row{ /* footer  ==================================== */
+  position: relative;
   margin-top:80px;
   padding:60px 50px 20px 50px;
   background-color: rgba(0, 0, 0, 0.7);
   background: url(../index_img/blackcircle.jpg);
+  overflow: hidden;
 }
 
 footer .row section{
-  border-right: 1px solid rgb(255, 255, 255);
+  padding:0;
+  height: 112px;
 }
 
 footer .row section ul{
   text-align: right;
   margin:0;
+  padding:0 12px;
+  height: 112px;
+  border-right: 1px solid var(--text-white);
+}
+
+footer .row section:nth-child(4) ul{
+  position: relative;
+  animation:updown 1.8s ease-in-out Infinite Alternate; 
+}
+
+@keyframes updown {
+  0% { height: 60px; }
+  to { height: 160px; } 
+}
+
+footer .row section:nth-child(4) i{
+  position:absolute;
+  bottom:-10px;
+  right:-10px;
+  color: orange;
+  transform: rotateX(180deg);
 }
 
 footer .row section ul li{  
@@ -670,20 +789,49 @@ font-size: 15px;
 color:var(--text-white);
 }
 
-footer .row section ul li:hover{
-  color:rgba(255, 255, 255, 1);
-}  
+footer .row section ul li a{  
+  color:var(--text-white);
+  }
 
 footer .row section ul li:hover{
   color:white;
+  cursor: pointer;
   text-shadow: 0 0 1vh white, 0 0 2vh white, 0 0 5vh white, 0 0 7vh lemonchiffon, 0 0 9vh lemonchiffon, 0 0 11vh lemonchiffon;
-}  
+} 
+
+.spiderWeb{
+  position: absolute;
+  bottom:-50px;
+  right:-70px;
+  width:280px;
+  background-color: transparent;
+  color:gray;
+  font-size:25px;
+  font-weight: 100;
+  transform: rotate(-25deg);
+}
+
+.spiderWeb img{
+  width:100%;
+  filter: invert(0.5);
+  transform: rotateY(180deg) rotateX(180deg);
+}
+
+.spiderWeb span{
+  position: absolute;
+  top:30px;
+  left:75px;
+  text-align:center;
+  transform: perspective(200px) rotateX(-25deg);
+  font-family: 'Snowburst One', cursive;
+}
+
 
 footer .row p{
   margin:120px 0 10px 0px;
-  color:rgba(255, 255, 255, 0.5);
+  color:rgba(255, 255, 255, 0.7);
   text-align: center;
-}  
+} 
 
 @media screen and (max-width:1580px){
 
@@ -742,6 +890,9 @@ footer .row p{
     margin:0;
   }
 
+  #landPage section .cube>div span h2 div{
+    font-size:1.5vw;
+  }
 }
 
 @media screen and (max-width:480px){
@@ -756,6 +907,10 @@ footer .row p{
 
   .cube>div span h5{
     font-size:4.3vw;
+  }
+
+  #landPage section .cube>div span h2 div{
+    font-size:2vw;
   }
 
 }
