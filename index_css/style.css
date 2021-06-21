@@ -735,11 +735,14 @@ transform: scale(1.8)!important;
   padding:3px;
   border:2px solid rgb(128, 128, 128);
   color: rgb(128, 128, 128);
+  transition: all 0.5s;
+  z-index:20;
 }
 
 .gototop:hover{
   color:white;
-  background-color: rgb(128, 128, 128);
+  background-color:orange;
+  border-radius: 50%;
 }
 
 footer .row{ /* footer  ==================================== */
