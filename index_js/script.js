@@ -49,21 +49,21 @@ $(function(){
 
         if ($(this).scrollTop() >= Math.ceil($('#chartPage').offset().top)-45 && $(this).scrollTop() < Math.ceil($('#webPages').offset().top)) {
             $('nav').addClass('navColor1');
-            $('.navSecondul li:nth-child(1)').css({'border':'1.5px solid white'});
+            $('.navSecondul li:nth-child(1)').css({'border':'2px solid white'});
         } else {
             $('nav').removeClass('navColor1');
             $('.navSecondul li:nth-child(1)').css({'border':'none'});
         }
 
         if ($(this).scrollTop() >= Math.ceil($('#webPages').offset().top) && $(this).scrollTop() < Math.ceil($('#summaryWheel').offset().top)-45) {
-            $('.navSecondul li:nth-child(2)').css({'border':'1.5px solid white'});
+            $('.navSecondul li:nth-child(2)').css({'border': '2px solid white'});
         } else {
             $('.navSecondul li:nth-child(2)').css({'border':'none'});
         }
 
         if ($(this).scrollTop() >= Math.ceil($('#summaryWheel').offset().top)-45 && $(this).scrollTop() < Math.ceil($('footer').offset().top)) {
             $('nav').addClass('navColor2');
-            $('.navSecondul li:nth-child(3)').css({'border':'1px solid white'});
+            $('.navSecondul li:nth-child(3)').css({'border':'2px solid white'});
         } else {
             $('nav').removeClass('navColor2');
             $('.navSecondul li:nth-child(3)').css({'border':'none'});
@@ -112,10 +112,10 @@ $(function(){
         let barChart = new Chart(chartOne, {
             type : 'bar', //pie, line, doughnut, polarArea
             data : {
-                labels : ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'React JS', 'Bootstrap'],
+                labels : ['HTML5', 'CSS3/SCSS', 'JavaScript', 'jQuery', 'React JS', 'Bootstrap'],
                 datasets :[{
                     label : 'Comprehension of frontend languages (%)',
-                    data : [100, 100, 90, 90, 80, 85],
+                    data : [100, 100, 90, 90, 88, 88],
                     backgroundColor:['lightskyblue'],
                     borderWidth:1,
                     borderColor:'white',
@@ -178,9 +178,9 @@ $(function(){
         let doughnutChart3 = new Chart(chartThree_third, {
             type : 'doughnut', //pie, line, doughnut, polarArea
             data : {
-                labels : ['GitHub: 80%'],
+                labels : ['GitHub: 90%'],
                 datasets :[{
-                    data : [80, 20],
+                    data : [90, 10],
                     backgroundColor:['yellowgreen','white'],
                     borderWidth:1,
                     borderColor:'white',
@@ -240,21 +240,30 @@ $(function(){
         $('#webPages section:nth-child(3)>div>div').css({'margin-top':'-168px', 'backdrop-filter':'blur(10px)'});
         $('#webPages section:nth-child(3)>div>div p').css({'color':'white'});
         $('#webPages section:nth-child(3)>div i').addClass('showinfo');
+        $('#webPages section button:nth-child(1)').css({'text-decoration':'underline'});
     }
 
     $('#webPages section button').click(function(){
         var num = $('#webPages section button').index(this);
         if (num==0){
-            $('#webPages section>div').css({'visibility':'visible','max-height':'1000px'});
+            $('#webPages section>div').css({'opacity':'1'});
+            $('#webPages section button').css({'text-decoration':'none'});
+            $('#webPages section button:nth-child(1)').css({'text-decoration':'underline'});
+
         }else if (num==1){
-            $('#webPages section>div').css({'visibility':'visible','max-height':'1000px'});
-            $('#webPages .backend, .plan').css({'visibility':'hidden','max-height':'0'});
+            $('#webPages section>div').css({'opacity':'1'});
+            $('#webPages .backend').css({'opacity':'0.2'});
+            $('#webPages section button').css({'text-decoration':'none'});
+            $('#webPages section button:nth-child(2)').css({'text-decoration':'underline'});
+
         }else if (num==2){
-            $('#webPages section>div').css({'visibility':'hidden','max-height':'0'});
-            $('#webPages .backend').css({'visibility':'visible','max-height':'1000px'});
+            $('#webPages section>div').css({'opacity':'0.2'});
+            $('#webPages .backend').css({'opacity':'1'});
+            $('#webPages section button').css({'text-decoration':'none'});
+            $('#webPages section button:nth-child(3)').css({'text-decoration':'underline'});
         }
 
-        $('#webSpider1').css({'top':'132px','visibility':'collapse', 'animation':'none' });
+    $('#webSpider1').css({'top':'132px','visibility':'collapse', 'animation':'none' });
     });
 
     $('#webPages section>div i').click(function(){
